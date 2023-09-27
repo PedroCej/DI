@@ -1,35 +1,17 @@
 ﻿using System;
 
-public static class Program
+public static partial class Program
 {
     public static void Main()
     {
-        int[,] combinaciones = new int[100, 6];
-        int num;
-        for (int i = 0; i < 100; i++)
-        {
-            Console.Write(i + ".  ");
-            for (int j = 0; j < 6; j++)
-            {
-                num = aleatorio();
-                if (num == combinaciones[i, 0] || num == combinaciones[i, 1] || num == combinaciones[i, 2] || num == combinaciones[i, 3] || num == combinaciones[i, 4])
-                    j = j - 1;
-                else
-                {
-                    combinaciones[i, j] = num;
-                    Console.Write(combinaciones[i, j] + "\t\t");
-                }
-            }
-            Console.WriteLine("\n");
-        }
+        Boleto boleto = new Boleto();
+        Boleto boleto1 = new Boleto(1,2,3,4,5,6);
+        Boleto boleto2 = new Boleto(1,2,9,4,6,5);
+        Console.WriteLine(boleto1);
+        Console.WriteLine(boleto2);
+        Console.WriteLine(boleto);
 
-
-        int aleatorio()
-        {
-            Random al = new Random();
-            return al.Next(1, 50);
-        }
-
-        //
+        if(boleto1.Equals(boleto2)) Console.WriteLine("Son iguales");
     }
 }
+   
