@@ -33,17 +33,41 @@
         return combinacion[0] +"\t"+ combinacion[1] + "\t" + combinacion[2] + "\t" + combinacion[3] + "\t" + combinacion[4] + "\t" + combinacion[5].ToString();
     }
 
-    public override bool Equals(object? obj)
+    public int[] getNumerosBoleto()
     {
-        HashSet<int> set1 = new HashSet<int>(this.combinacion);
-        HashSet<int> set2 = new HashSet<int>(combinacion);
-
-        return set1.SetEquals(set2);
+        return combinacion;     
     }
 
-    public int Aleatorio()
+    public override bool Equals(object? obj)
+    {
+        bool existe;  
+        if(obj == null) return false;
+        else
+        {
+            Boleto otroBoleto = (Boleto)obj;
+
+            for (int i = 0;i<this.combinacion.Length;i++) {
+                existe = false;
+                for (int j = 0; j < otroBoleto.getNumerosBoleto().Length; j++)
+                {
+                    if (this.combinacion[i] == otroBoleto.getNumerosBoleto()[j]) existe=true;
+                    if (!existe) return false;
+
+                }
+            
+            }
+            return true;
+        }
+    }
+
+    private int Aleatorio()
     {
         Random al = new Random();
         return al.Next(1, 50);
+    }
+
+    public override int GetHashCode()
+    {
+        throw new NotImplementedException();
     }
 }
