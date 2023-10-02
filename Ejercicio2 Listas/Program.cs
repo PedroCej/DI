@@ -7,12 +7,12 @@
             List <Persona> listaPersonas = new List <Persona>();
             bool cont = true;
             string posiblePersona = "";
-
+            
             do
             {
-                
                 try
                 {
+                    Console.WriteLine("Introduce el nombre de una persona");
                     posiblePersona = Console.ReadLine();
                 }
                 catch (Exception ex)
@@ -20,12 +20,10 @@
                     Console.WriteLine(ex);
                 }
 
-                if (posiblePersona.Equals("fin"))
+                if (posiblePersona.ToLower().Equals("fin"))
                 {
                     cont = false;
-                }
-                else
-                {
+                }else {
                     Persona nuevaPersona = new Persona(posiblePersona);
                     listaPersonas.Add(nuevaPersona);
                 }
@@ -34,7 +32,7 @@
 
             foreach (Persona persona in listaPersonas)
             {
-                Console.WriteLine(persona);
+                Console.WriteLine(persona); // persona.Nombre + " - " + persona.Longitud
             }
             
         }
