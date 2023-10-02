@@ -51,10 +51,10 @@
                 for (int j = 0; j < otroBoleto.getNumerosBoleto().Length; j++)
                 {
                     if (this.combinacion[i] == otroBoleto.getNumerosBoleto()[j]) existe=true;
-                    if (!existe) return false;
+                    
 
                 }
-            
+                if (!existe) return false;
             }
             return true;
         }
