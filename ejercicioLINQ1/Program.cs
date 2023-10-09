@@ -8,11 +8,17 @@ namespace ejercicioLINQ1
         {
             PlayList playList = new PlayList();
             playList.Mostrar();
+            List<Cancion> cancionesPorEstilo = playList.MostrarPorEstilo("rock");
 
-            playList.MostrarPorEstilo("rock");
-            
+            //Console.WriteLine(playList.MostrarPorEstilo("rock"));
 
+            //Console.WriteLine(playList.ListaTitulo());
+            //playList.MostrarPorEstilo("rock");
+            foreach (Cancion cancion in cancionesPorEstilo) { 
+                Console.WriteLine(cancion.tipoMusica);
+            }
 
+            cancionesPorEstilo.
 
 /*
             List<Cancion> BusquedaPorEstilo(string estilo)

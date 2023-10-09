@@ -57,8 +57,12 @@ namespace ejercicioLINQ1
         }
         public List<Cancion> MostrarPorEstilo(string estilo)
         {
-            return cancionesLista.Where(x => x.tipoMusica == estilo).ToList();
+            return cancionesLista.Where(x => x.tipoMusica == estilo).ToList(); 
         }
 
+        public List<string> ListaTitulo()
+        {
+            return cancionesLista.Select(x => x.tituloCancion).ToList<string>();
+        }
     }
 }
