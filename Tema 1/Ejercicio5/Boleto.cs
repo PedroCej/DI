@@ -38,7 +38,7 @@
         return combinacion;     
     }
 
-    public override bool Equals(object? obj)
+/*    public override bool Equals(object? obj)
     {
         bool existe;  
         if(obj == null) return false;
@@ -58,7 +58,7 @@
             }
             return true;
         }
-    }
+    }*/
 
     private int Aleatorio()
     {
@@ -69,5 +69,28 @@
     public override int GetHashCode()
     {
         throw new NotImplementedException();
+    }
+
+
+    public override bool Equals(object? obj)
+    {
+        if (obj == null) return false;
+        else
+        {
+        Boleto posibleBoleto = (Boleto)obj;
+        for (int i = 0; i < 6; i++){
+            bool existe = false;
+            for (int j = 0; j < 6; j++)
+                {
+                   if (this.combinacion[i] == posibleBoleto.getNumerosBoleto()[j]) existe = true;
+                }
+                if (!existe) return false;
+            }
+            
+        }
+        
+
+
+        return true;
     }
 }
