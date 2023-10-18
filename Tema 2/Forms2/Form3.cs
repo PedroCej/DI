@@ -37,5 +37,15 @@ namespace Forms2
         {
             formularioRecibido.Size = new System.Drawing.Size(1024, 768);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
