@@ -40,5 +40,11 @@ namespace Forms2
             Form3 nuevoForm = new Form3(this);
             nuevoForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form4 nuevoForm = new Form4();
+            nuevoForm.Show();
+        }
     }
 }

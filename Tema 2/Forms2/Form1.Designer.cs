@@ -34,6 +34,7 @@
             button1 = new Button();
             txtMensaje = new TextBox();
             btn3 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // btn
@@ -92,12 +93,23 @@
             btn3.UseVisualStyleBackColor = true;
             btn3.Click += btn3_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(544, 348);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 23);
+            button2.TabIndex = 6;
+            button2.Text = "Prueba ListBox";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(784, 561);
+            Controls.Add(button2);
             Controls.Add(btn3);
             Controls.Add(txtMensaje);
             Controls.Add(button1);
@@ -121,5 +133,6 @@
         private Button button1;
         private TextBox txtMensaje;
         private Button btn3;
+        private Button button2;
     }
 }
