@@ -32,11 +32,11 @@
             rdb2 = new RadioButton();
             rdb3 = new RadioButton();
             panel1 = new Panel();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            label2 = new Label();
             panel2 = new Panel();
             label1 = new Label();
-            label2 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -88,6 +88,39 @@
             panel1.Size = new Size(200, 100);
             panel1.TabIndex = 3;
             // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(16, 61);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(80, 19);
+            radioButton2.TabIndex = 2;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Maximizar";
+            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.Click += radioButton2_Click;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(16, 36);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(65, 19);
+            radioButton1.TabIndex = 1;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Normal";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.Click += radioButton1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(5, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Ventana";
+            // 
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
@@ -110,38 +143,6 @@
             label1.TabIndex = 3;
             label1.Text = "Resolución";
             label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(5, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Ventana";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(16, 36);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(65, 19);
-            radioButton1.TabIndex = 1;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Normal";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.Click += radioButton1_Click;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(16, 61);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(80, 19);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Maximizar";
-            radioButton2.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 

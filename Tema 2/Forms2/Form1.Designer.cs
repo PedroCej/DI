@@ -96,6 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(800, 450);
             Controls.Add(btn3);
             Controls.Add(txtMensaje);
@@ -104,6 +105,7 @@
             Controls.Add(label1);
             Controls.Add(btn);
             Name = "Form1";
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "Form1";
             MouseEnter += Form1_MouseEnter;
             MouseLeave += Form1_MouseLeave;

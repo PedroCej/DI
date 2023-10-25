@@ -45,7 +45,12 @@ namespace Forms2
 
         private void radioButton1_Click(object sender, EventArgs e)
         {
+            formularioRecibido.WindowState = FormWindowState.Normal;
+        }
 
+        private void radioButton2_Click(object sender, EventArgs e)
+        {
+            formularioRecibido.WindowState = FormWindowState.Maximized;
         }
     }
 }
