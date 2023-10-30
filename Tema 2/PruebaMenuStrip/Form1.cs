@@ -91,7 +91,7 @@ namespace PruebaMenuStrip
 
         private void randomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtB.Text = new Random().Next(0, 100).ToString();
+            txtB.Text = new Random().Next(0, 100).ToString();//
         }
 
 
