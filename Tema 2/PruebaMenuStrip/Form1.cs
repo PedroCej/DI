@@ -73,5 +73,28 @@ namespace PruebaMenuStrip
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void contextMenuStripTextA_Resetear_Click(object sender, EventArgs e)
+        {
+            txtA.Text = null;
+        }
+
+        private void contextMenuStripTextA_CalcularAleatorio_Click(object sender, EventArgs e)
+        {
+            txtA.Text = new Random().Next(0, 100).ToString();
+        }
+
+        private void resetearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtB.Text = null;
+        }
+
+        private void randomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtB.Text = new Random().Next(0, 100).ToString();
+        }
+
+
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             ToolStripMenuItem_Archivo = new ToolStripMenuItem();
             ToolStripMenuItem_Archivo_Salir = new ToolStripMenuItem();
@@ -38,9 +39,17 @@
             ToolStripMenuItem_Operaciones_Sumar = new ToolStripMenuItem();
             ToolStripMenuItem_AcercaDe = new ToolStripMenuItem();
             txtA = new TextBox();
+            contextMenuStripTextA = new ContextMenuStrip(components);
+            contextMenuStripTextA_Resetear = new ToolStripMenuItem();
+            contextMenuStripTextA_CalcularAleatorio = new ToolStripMenuItem();
             txtB = new TextBox();
             lbl1 = new Label();
+            contextMenuStripTextB = new ContextMenuStrip(components);
+            contextMenuStripTextB_Resetear = new ToolStripMenuItem();
+            contextMenuStripTextB_Random = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
+            contextMenuStripTextA.SuspendLayout();
+            contextMenuStripTextB.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -117,13 +126,35 @@
             // 
             // txtA
             // 
+            txtA.ContextMenuStrip = contextMenuStripTextA;
             txtA.Location = new Point(12, 36);
             txtA.Name = "txtA";
             txtA.Size = new Size(100, 23);
             txtA.TabIndex = 1;
             // 
+            // contextMenuStripTextA
+            // 
+            contextMenuStripTextA.Items.AddRange(new ToolStripItem[] { contextMenuStripTextA_Resetear, contextMenuStripTextA_CalcularAleatorio });
+            contextMenuStripTextA.Name = "contextMenuStripTextA";
+            contextMenuStripTextA.Size = new Size(169, 48);
+            // 
+            // contextMenuStripTextA_Resetear
+            // 
+            contextMenuStripTextA_Resetear.Name = "contextMenuStripTextA_Resetear";
+            contextMenuStripTextA_Resetear.Size = new Size(168, 22);
+            contextMenuStripTextA_Resetear.Text = "Resetear";
+            contextMenuStripTextA_Resetear.Click += contextMenuStripTextA_Resetear_Click;
+            // 
+            // contextMenuStripTextA_CalcularAleatorio
+            // 
+            contextMenuStripTextA_CalcularAleatorio.Name = "contextMenuStripTextA_CalcularAleatorio";
+            contextMenuStripTextA_CalcularAleatorio.Size = new Size(168, 22);
+            contextMenuStripTextA_CalcularAleatorio.Text = "Calcular Aleatorio";
+            contextMenuStripTextA_CalcularAleatorio.Click += contextMenuStripTextA_CalcularAleatorio_Click;
+            // 
             // txtB
             // 
+            txtB.ContextMenuStrip = contextMenuStripTextB;
             txtB.Location = new Point(12, 65);
             txtB.Name = "txtB";
             txtB.Size = new Size(100, 23);
@@ -137,6 +168,26 @@
             lbl1.Size = new Size(59, 15);
             lbl1.TabIndex = 3;
             lbl1.Text = "Resultado";
+            // 
+            // contextMenuStripTextB
+            // 
+            contextMenuStripTextB.Items.AddRange(new ToolStripItem[] { contextMenuStripTextB_Resetear, contextMenuStripTextB_Random });
+            contextMenuStripTextB.Name = "contextMenuStripTextB";
+            contextMenuStripTextB.Size = new Size(120, 48);
+            // 
+            // contextMenuStripTextB_Resetear
+            // 
+            contextMenuStripTextB_Resetear.Name = "contextMenuStripTextB_Resetear";
+            contextMenuStripTextB_Resetear.Size = new Size(119, 22);
+            contextMenuStripTextB_Resetear.Text = "Resetear";
+            contextMenuStripTextB_Resetear.Click += resetearToolStripMenuItem_Click;
+            // 
+            // contextMenuStripTextB_Random
+            // 
+            contextMenuStripTextB_Random.Name = "contextMenuStripTextB_Random";
+            contextMenuStripTextB_Random.Size = new Size(119, 22);
+            contextMenuStripTextB_Random.Text = "Random";
+            contextMenuStripTextB_Random.Click += randomToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -152,6 +203,8 @@
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            contextMenuStripTextA.ResumeLayout(false);
+            contextMenuStripTextB.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,5 +223,11 @@
         private TextBox txtA;
         private TextBox txtB;
         private Label lbl1;
+        private ContextMenuStrip contextMenuStripTextA;
+        private ToolStripMenuItem contextMenuStripTextA_Resetear;
+        private ToolStripMenuItem contextMenuStripTextA_CalcularAleatorio;
+        private ContextMenuStrip contextMenuStripTextB;
+        private ToolStripMenuItem contextMenuStripTextB_Resetear;
+        private ToolStripMenuItem contextMenuStripTextB_Random;
     }
 }
