@@ -1,3 +1,6 @@
+using System.Drawing;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+
 namespace PruebaMenuStrip
 {
     public partial class Form1 : Form
@@ -7,11 +10,6 @@ namespace PruebaMenuStrip
             InitializeComponent();
         }
 
-        private void ToolStripMenuItem_AcercaDe_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Esto es Acerca De");
-
-        }
 
         private void ToolStripMenuItem_Archivo_Salir_Click(object sender, EventArgs e)
         {
@@ -94,7 +92,45 @@ namespace PruebaMenuStrip
             txtB.Text = new Random().Next(0, 100).ToString();//
         }
 
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Esto es Acerca De");
+        }
 
+        private void habilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtA.Enabled = habilitarToolStripMenuItem.Checked;
+            txtB.Enabled = habilitarToolStripMenuItem.Checked;
+        }
 
+        private void fondoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog color = new ColorDialog();
+            if (color.ShowDialog() == DialogResult.OK)
+                this.BackColor = color.Color;
+        }
+
+        private void fuenteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ColorDialog color = new ColorDialog();
+            if (color.ShowDialog() == DialogResult.OK)
+            {
+                txtA.ForeColor = color.Color;
+                txtB.ForeColor = color.Color;
+                lbl1.ForeColor = color.Color;
+            }
+        }
+
+        private void fuenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog fuente = new FontDialog();
+            if (fuente.ShowDialog() == DialogResult.OK)
+            {
+                txtA.Font = fuente.Font;
+                txtB.Font = fuente.Font;
+                lbl1.Font = fuente.Font;
+            }
+
+        }
     }
 }

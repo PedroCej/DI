@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             button2 = new Button();
-            button1 = new Button();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
@@ -46,17 +45,9 @@
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 19;
-            button2.Text = "Cancelar";
+            button2.Text = "Cerrar";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(291, 44);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 18;
-            button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox4
             // 
@@ -136,7 +127,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -147,6 +137,7 @@
             Controls.Add(label1);
             Name = "Form3";
             Text = "Form3";
+            FormClosed += Form3_FormClosed;
             Load += Form3_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -155,7 +146,6 @@
         #endregion
 
         private Button button2;
-        private Button button1;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
