@@ -5,6 +5,7 @@ namespace DosVentanas
     public partial class Form1 : Form
     {
         BBDD miBaseDatos;
+
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +15,11 @@ namespace DosVentanas
         {
             miBaseDatos = new BBDD(txtUser.Text, txtPasswd.Text, txtServer.Text, txtPort.Text);
             miBaseDatos.Conectar();
-
+            this.Hide();
+            Form2 segundaPagina = new Form2(this, miBaseDatos);
+            segundaPagina.ShowDialog();
         }
+
+
     }
 }

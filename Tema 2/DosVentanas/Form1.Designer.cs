@@ -45,6 +45,7 @@
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(100, 23);
             txtUser.TabIndex = 0;
+            txtUser.Text = "root";
             // 
             // txtPasswd
             // 
@@ -52,6 +53,8 @@
             txtPasswd.Name = "txtPasswd";
             txtPasswd.Size = new Size(100, 23);
             txtPasswd.TabIndex = 1;
+            txtPasswd.Text = "root";
+            txtPasswd.UseSystemPasswordChar = true;
             // 
             // txtServer
             // 
@@ -59,6 +62,7 @@
             txtServer.Name = "txtServer";
             txtServer.Size = new Size(100, 23);
             txtServer.TabIndex = 2;
+            txtServer.Text = "localhost";
             // 
             // txtPort
             // 
@@ -66,6 +70,7 @@
             txtPort.Name = "txtPort";
             txtPort.Size = new Size(100, 23);
             txtPort.TabIndex = 3;
+            txtPort.Text = "3306";
             // 
             // label1
             // 

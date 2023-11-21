@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace DosVentanas
 
         MySqlConnection miConexion;
         MySqlCommand miComando;
-        MySqlDataReader miDataReader;
+        MySqlDataAdapter miAdaptador;
+        DataSet ds;
 
         public BBDD(string user, string passwd, string ip, string port)
         {
@@ -30,7 +32,7 @@ namespace DosVentanas
             {
                 try
                 {
-                    miConexion = new MySqlConnection("server = " + ip + ";" + " port = " + port + ";" + " userid = " + user + ";" + " password = " + passwd + ";" + " database = world; Allow Zero DateTime = True; CHARSET = utf8mb4");
+                    miConexion = new MySqlConnection("server = " + ip + ";" + " port = " + port + ";" + " userid = " + user + ";" + " password = " + passwd + ";" + " database = ingenieros; Allow Zero DateTime = True; CHARSET = utf8mb4");
                     miConexion.Open();
                 }
                 catch (MySqlException ex)
@@ -39,6 +41,28 @@ namespace DosVentanas
                 }
             }
         }
+
+        public void CargarTablaForestales()
+        {
+            miComando = new MySqlCommand("SELECT * FROM forestales", miConexion);
+            miAdaptador = new MySqlDataAdapter(miComando);
+            ds = new DataSet();
+            miAdaptador.Fill(ds, "forestales");
+
+        }
+
+        public DataRow obtenerFila(int i)
+        {
+            DataRow fila = ds.Tables[0].Rows[i];
+            return fila;
+           
+        }
+
+        public int numFilas()
+{
+            return ds.Tables[0].Rows.Count;
+        }
+
 
         public void Desconectar()
         {
