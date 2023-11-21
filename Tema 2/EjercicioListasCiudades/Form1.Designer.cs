@@ -49,6 +49,7 @@
             txtServer.Name = "txtServer";
             txtServer.Size = new Size(100, 23);
             txtServer.TabIndex = 0;
+            txtServer.Text = "localhost";
             // 
             // txtUser
             // 
@@ -56,6 +57,7 @@
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(100, 23);
             txtUser.TabIndex = 1;
+            txtUser.Text = "root";
             // 
             // txtPasswd
             // 
@@ -63,6 +65,7 @@
             txtPasswd.Name = "txtPasswd";
             txtPasswd.Size = new Size(100, 23);
             txtPasswd.TabIndex = 2;
+            txtPasswd.Text = "root";
             // 
             // txtPort
             // 
@@ -70,6 +73,7 @@
             txtPort.Name = "txtPort";
             txtPort.Size = new Size(100, 23);
             txtPort.TabIndex = 3;
+            txtPort.Text = "3306";
             // 
             // btnConectar
             // 
@@ -130,7 +134,7 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(399, 52);
+            listBox1.Location = new Point(399, 50);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(340, 169);
             listBox1.TabIndex = 10;

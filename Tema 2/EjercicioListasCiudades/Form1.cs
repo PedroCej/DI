@@ -7,8 +7,7 @@ namespace EjercicioListasCiudades
     {
         MySqlConnection conexion;
         MySqlCommand comando;
-        MySqlDataAdapter adaptador;
-        DataSet ds;
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +19,11 @@ namespace EjercicioListasCiudades
             miBaseDatos = new BBDD(txtUser.Text, txtPasswd.Text, txtServer.Text, txtPort.Text);
             miBaseDatos.Conectar();
 
+            List<Ciudad> listaCiudades = miBaseDatos.ObtenerCiudades();
+            foreach (Ciudad ciudad in listaCiudades)
+            {
+                listBox1.Items.Add(ciudad);
+            }
         }
     }
 }

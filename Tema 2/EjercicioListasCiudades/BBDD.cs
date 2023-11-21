@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,7 @@ namespace EjercicioListasCiudades
 
         MySqlConnection miConexion;
         MySqlCommand miComando;
-        MySqlDataAdapter miAdaptador;
-        DataSet miDataSet;
+        MySqlDataReader miDataReader;
 
         public BBDD(string user, string passwd, string ip, string port)
         {
@@ -32,7 +32,7 @@ namespace EjercicioListasCiudades
             {
                 try
                 {
-                    miConexion = new MySqlConnection("server = " + ip + ";" + " port = " + port + ";" + " userid = " + user + ";" + " password = " + passwd + ";" + " database = ingenieros; Allow Zero DateTime = True; CHARSET = utf8mb4");
+                    miConexion = new MySqlConnection("server = " + ip + ";" + " port = " + port + ";" + " userid = " + user + ";" + " password = " + passwd + ";" + " database = world; Allow Zero DateTime = True; CHARSET = utf8mb4");
                     miConexion.Open();
                 }
                 catch (MySqlException ex)
@@ -41,30 +41,23 @@ namespace EjercicioListasCiudades
                 }
             }
         }
-        /*
-        public void CargarTablaForestales()
-        {
-            miComando = new MySqlCommand("SELECT * FROM forestales", miConexion);
-            miAdaptador = new MySqlDataAdapter(miComando);
-            miDataSet = new DataSet();
-            miAdaptador.Fill(miDataSet, "forestales");
-        }
 
-        public void InsertarTablaForestales(string dni, string nombre, string apellidos, string telefono, string email)
+        public List<Ciudad> ObtenerCiudades()
         {
-            miComando = new MySqlCommand("INSERT INTO FORESTALES VALUES('" + dni + "','" + nombre + "','" + apellidos + "','" + telefono + "','" + email + "')", miConexion);
-            miComando.ExecuteNonQuery();
-        }
-
-        public DataView ObtenerDataView()
-        {
-            return miDataSet.Tables["Forestales"].DefaultView;
+            List<Ciudad> listaCiudades = new List<Ciudad>();
+            miComando = new MySqlCommand("SELECT * FROM city", miConexion);
+            miDataReader = miComando.ExecuteReader();
+            while (miDataReader.Read())
+            {
+                Ciudad city = new Ciudad((Int32)miDataReader["ID"], miDataReader["Name"].ToString(), miDataReader["CountryCode"].ToString(), (Int32)miDataReader["Population"]);
+                listaCiudades.Add(city);
+            }
+            return listaCiudades;
         }
 
         public void Desconectar()
         {
             miConexion.Close();
         }
-        */
     }
 }
