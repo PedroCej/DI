@@ -40,7 +40,10 @@
             dataGridView1 = new DataGridView();
             listBox1 = new ListBox();
             label5 = new Label();
+            listBox2 = new ListBox();
+            dataGridView2 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // txtServer
@@ -127,32 +130,54 @@
             dataGridView1.Location = new Point(12, 244);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 194);
+            dataGridView1.Size = new Size(661, 194);
             dataGridView1.TabIndex = 9;
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(399, 50);
+            listBox1.Location = new Point(333, 50);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(340, 169);
             listBox1.TabIndex = 10;
+            listBox1.DoubleClick += listBox1_DoubleClick;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(399, 22);
+            label5.Location = new Point(333, 22);
             label5.Name = "label5";
             label5.Size = new Size(109, 15);
             label5.TabIndex = 11;
             label5.Text = "Ciudad - Población";
             // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(1056, 50);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(340, 169);
+            listBox2.TabIndex = 12;
+            listBox2.DoubleClick += listBox2_DoubleClick;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(702, 244);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(694, 194);
+            dataGridView2.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1408, 469);
+            Controls.Add(dataGridView2);
+            Controls.Add(listBox2);
             Controls.Add(label5);
             Controls.Add(listBox1);
             Controls.Add(dataGridView1);
@@ -168,6 +193,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,5 +212,7 @@
         private DataGridView dataGridView1;
         private ListBox listBox1;
         private Label label5;
+        private ListBox listBox2;
+        private DataGridView dataGridView2;
     }
 }
