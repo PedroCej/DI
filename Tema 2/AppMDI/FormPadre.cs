@@ -24,8 +24,9 @@ namespace AppMDI
             nuevoFormularioHijo.MdiParent = this;
             nuevoFormularioHijo.Show();
             listaFormulariosHijo.Add(nuevoFormularioHijo);
-            
 
+            //this.Text = this.MdiChildren.Count().ToString();
+            //Se utiliza  this.MdiChildren.Count()  para saber cuantos hijos tiene el padre (this)
         }
 
         public void EliminarDeLaLista(FormHijo1 formHijo1)

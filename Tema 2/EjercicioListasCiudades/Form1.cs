@@ -8,6 +8,12 @@ namespace EjercicioListasCiudades
 
         /*Cambiar el listbox para que devuelva paises y al pulsar doble click en uno salgan datos de todas las ciudades de ese pais*/
 
+        /*Usar un DataSet para meter dos tablas en el mismo:
+            - En un DataGrid añadir ciudades o paises dependiendo de lo que pulses
+            - Pulsar un boton para guardar dos tablas en el DataSet
+            - Probar a pasar un DataView al dataSource del datagrid
+         */
+
         BBDD miBaseDatos;
         public Form1()
         {
