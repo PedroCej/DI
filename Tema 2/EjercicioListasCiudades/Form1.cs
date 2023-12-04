@@ -64,10 +64,11 @@ namespace EjercicioListasCiudades
 
             if (dataGridView2.Rows.Count < 1)
             {
-                dataGridView2.Columns.Add("ID", "ID");
+                dataGridView2.Columns.Add("ID", "IDPRUEBA");
                 dataGridView2.Columns.Add("Name", "Name");
                 dataGridView2.Columns.Add("CountryCode", "CountryCode");
                 dataGridView2.Columns.Add("Population", "Population");
+                
             }
 
             dataGridView2.Rows.Clear();

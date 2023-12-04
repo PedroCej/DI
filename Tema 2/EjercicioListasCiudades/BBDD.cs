@@ -31,7 +31,7 @@ namespace EjercicioListasCiudades
             
                 try
                 {
-                    miConexion = new MySqlConnection("server = " + ip + ";" + " port = " + port + ";" + " userid = " + user + ";" + " password = " + passwd + ";" + " database = world; Allow Zero DateTime = True; CHARSET = utf8mb4");
+                    miConexion = new MySqlConnection($"server = {"localhost"}; port = {port}; userid = {user}; password = {passwd}; database = world; Allow Zero DateTime = True; CHARSET = utf8mb4");
                     //$"server = [ip]; port = [port]; userid = [user]; password = [passwd]; database = world; Allow Zero DateTime = True; CHARSET = utf8mb4"
                     miConexion.Open();
                 }
