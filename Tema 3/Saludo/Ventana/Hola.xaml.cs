@@ -19,9 +19,17 @@ namespace Saludo
     /// </summary>
     public partial class Hola : Window
     {
-        public Hola()
+        MainWindow main;
+        public Hola(MainWindow main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+
+        private void Window_Closed_1(object sender, EventArgs e)
+        {
+            main.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }

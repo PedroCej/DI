@@ -29,11 +29,16 @@ namespace Saludo
         {
             if(r1.IsChecked == true)
             {
-                MessageBox.Show("Hola");
+                Hola hola = new Hola(this);
+                hola.Show();
+                this.Hide();
+
             }
             else
             {
-                MessageBox.Show("Adios");
+                Adios adios = new Adios(this);
+                adios.Show();
+                this.Hide();
             }
         }
     }

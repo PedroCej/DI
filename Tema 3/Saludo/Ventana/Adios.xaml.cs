@@ -19,9 +19,16 @@ namespace Saludo
     /// </summary>
     public partial class Adios : Window
     {
-        public Adios()
+        MainWindow main;
+        public Adios(MainWindow main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            main.Show();
         }
     }
 }
