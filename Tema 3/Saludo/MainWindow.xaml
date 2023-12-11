@@ -1,0 +1,17 @@
+﻿<Window x:Class="Saludo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Saludo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Text="Selecciona una opcion y pulsa un boton para ver el saludo" Margin="0,66,0,0" FontSize="25" TextWrapping="Wrap"/>
+        <RadioButton x:Name="r1" IsChecked="True" Content="Hola"  Margin="-100,150,0,0" HorizontalAlignment="Center" />
+        <RadioButton x:Name="r2" Content="Adios"  Margin="100,150,0,0" HorizontalAlignment="Center"/>
+
+        <Button Content="Pulsame" FontSize="25" Height="100" Width="150"  HorizontalAlignment="Center" Margin="0,300,0,0" Click="Button_Click"/>
+
+    </Grid>
+</Window>
