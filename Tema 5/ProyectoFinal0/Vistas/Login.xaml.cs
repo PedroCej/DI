@@ -68,7 +68,7 @@ public partial class Login : ContentPage
     {
         if (txtPass.Text == txtPass2.Text)
         {
-            if (miBBDD.LoginTry(txtUser.Text, txtPass.Text)==false)
+            if (miBBDD.RegisterTry(txtUser.Text) == false)
             {
                 miBBDD.CrearUsuario(txtUser.Text, txtPass.Text, fotoElegida);
                 

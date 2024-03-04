@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -41,8 +42,33 @@ namespace ProyectoFinal0.Datos
 
         }
 
+        public List<string> getUsuarios()
+        {
+            comando = new SQLiteCommand($"SELECT * FROM Logins", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Logins");
+            List<string> lista = new List<string>();
+            foreach (DataRow fila in ds.Tables[0].Rows)
+            {
+                lista.Add(fila["Usuario"].ToString());
+            }
+            return lista;
+        }
 
-        public bool LoginTry(String usuario, String contraseña)
+        public string getFoto(string usuario)
+        {
+            comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Logins");
+            return ds.Tables[0].Rows[0]["FotoPerfil"].ToString();
+               
+        }
+
+
+
+        public bool RegisterTry(String usuario)
         {
             comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}'", conexion);
             adaptador = new SQLiteDataAdapter(comando);
@@ -60,6 +86,27 @@ namespace ProyectoFinal0.Datos
             }
             return false;
         }
+
+        public bool LoginTry(String usuario, String contraseña)
+        {
+            comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}' AND Pass='{contraseña}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            try
+            {
+                adaptador.Fill(ds, "Logins");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return true; // existe ese registro
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return false;
+        }
+
         /*
         private void btnActualizar_Click(object sender, EventArgs e)
         {

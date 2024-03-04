@@ -38,7 +38,18 @@ namespace ProyectoFinal0.Servicios
             }
             return true;
         }
-        
+
+        public List<string> ObtenerListaNombres()
+        {
+            List<string> lista = new List<string>();
+            int cantidad = json.RootElement.GetProperty("info").GetProperty("count").GetInt32();
+            for (int i = 0; i < cantidad; i++)
+            {
+                lista.Add(json.RootElement.GetProperty("data")[i].GetProperty("name").GetString());
+            }
+            return lista;
+        }
+
         public string ObtenerNombre()
         {
             return json.RootElement.GetProperty("data")[0].GetProperty("name").ToString();

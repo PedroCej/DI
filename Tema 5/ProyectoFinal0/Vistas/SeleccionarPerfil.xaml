@@ -38,7 +38,7 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Margin="20,0,0,0">
-                <ImageButton Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed"/>
+                <ImageButton Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed_1"/>
                 <Label Text="Añadir perfil" HorizontalOptions="Center" Margin="0,10,0,0"/>
             </VerticalStackLayout>
 

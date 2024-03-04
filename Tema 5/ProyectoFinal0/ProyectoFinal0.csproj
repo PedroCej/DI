@@ -91,10 +91,10 @@
 	  <MauiXaml Update="Vistas\AppShell_Inicio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\Login.xaml">
+	  <MauiXaml Update="Vistas\Inicio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vistas\MainPage.xaml">
+	  <MauiXaml Update="Vistas\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\SeleccionarPerfil.xaml">

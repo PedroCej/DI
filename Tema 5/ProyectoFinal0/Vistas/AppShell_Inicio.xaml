@@ -12,8 +12,8 @@
 
 
     <FlyoutItem Title="Inicio">
-        <ShellContent Title="Main" ContentTemplate="{DataTemplate misPaginas:MainPage}"></ShellContent>
-        <ShellContent Title="Otro"  ContentTemplate="{DataTemplate misPaginas:MainPage}"></ShellContent>
+        <ShellContent Title="Main" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+        <ShellContent Title="Otro"  ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
     </FlyoutItem>
 
 
