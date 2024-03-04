@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal0.Vistas.Login"
+             Title="Login">
+
+    <ScrollView>
+        <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+
+
+        <Grid RowSpacing="5" ColumnSpacing="5" Margin="0,0,0,20" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+
+
+
+            <!-- Fila 1 -->
+            <ImageButton x:Name="img1" Source="img_perfil_1.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="0" Grid.Column="0" />
+            <ImageButton x:Name="img2" Source="img_perfil_2.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="0" Grid.Column="1" />
+            <ImageButton x:Name="img3" Source="img_perfil_3.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="0" Grid.Column="2" />
+            <ImageButton x:Name="img4" Source="img_perfil_4.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="0" Grid.Column="3" />
+            <ImageButton x:Name="img5" Source="img_perfil_5.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="0" Grid.Column="4" />
+
+            <!-- Fila 2 -->
+            <ImageButton x:Name="img6" Source="img_perfil_6.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="1" Grid.Column="0" />
+            <ImageButton x:Name="img7" Source="img_perfil_7.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="1" Grid.Column="1" />
+            <ImageButton x:Name="img8" Source="img_perfil_8.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="1" Grid.Column="2" />
+            <ImageButton x:Name="img9" Source="img_perfil_9.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="1" Grid.Column="3" />
+            <ImageButton x:Name="img10" Source="img_perfil_10.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="1" Grid.Column="4" />
+
+            <!-- Fila 3 -->
+            <ImageButton x:Name="img11" Source="img_perfil_11.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="2" Grid.Column="0" />
+            <ImageButton x:Name="img12" Source="img_perfil_12.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="2" Grid.Column="1" />
+            <ImageButton x:Name="img13" Source="img_perfil_13.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="2" Grid.Column="2" />
+            <ImageButton x:Name="img14" Source="img_perfil_14.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="2" Grid.Column="3" />
+            <ImageButton x:Name="img15" Source="img_perfil_15.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="2" Grid.Column="4" />
+
+            <!-- Fila 4 -->
+            <ImageButton x:Name="img16" Source="img_perfil_16.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="3" Grid.Column="0" />
+            <ImageButton x:Name="img17" Source="img_perfil_17.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="3" Grid.Column="1" />
+            <ImageButton x:Name="img18" Source="img_perfil_18.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="3" Grid.Column="2" />
+            <ImageButton x:Name="img19" Source="img_perfil_19.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="3" Grid.Column="3" />
+            <ImageButton x:Name="img20" Source="img_perfil_20.jpg" Opacity="0.4" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" CornerRadius="50" Pressed="elegirFoto_Pressed" Grid.Row="3" Grid.Column="4" />
+
+        </Grid>
+
+
+        <Entry x:Name="txtUser" Placeholder="Usuario" HeightRequest="50" WidthRequest="400" FontSize="25" Margin="0,20,0,0"/>
+        <Entry x:Name="txtPass" Placeholder="Contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,0"/>
+        <Entry x:Name="txtPass2" Placeholder="Repite contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,40"/>
+
+
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="Confirmar" x:Name="btnConfirmar"
+                    Pressed="btnConfirmar_Pressed"
+                    Margin="0,0,20,0"
+                    WidthRequest="200"/>
+            <Button Text="Cancelar" x:Name="btnCancelar"
+                    Pressed="btnCancelar_Pressed"
+                    WidthRequest="200"/>
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

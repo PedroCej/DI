@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Estilos.MainPage">
+
+    <ContentPage.BackgroundColor>
+        {DynamicResource fondo}
+    </ContentPage.BackgroundColor>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="auxiliar" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="AliceBlue"/>
+                <Setter Property="TextColor" Value="CadetBlue"/>
+                <Setter Property="FontSize" Value="50"/>
+            </Style>
+
+            <Style x:Key="modoOscuro" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="DarkBlue"/>
+                <Setter Property="TextColor" Value="CadetBlue"/>
+                <Setter Property="FontSize" Value="50"/>
+            </Style>
+
+            <Style x:Name="estilo" x:Key="estiloEtiqueta1" TargetType="Label"> 
+                <Setter Property="BackgroundColor" Value="AliceBlue"/>
+                <Setter Property="TextColor" Value="CadetBlue"/>
+                <Setter Property="FontSize" Value="50"/>
+            </Style>
+
+            <Style x:Key="estiloEtiqueta2" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="AliceBlue"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="10"  />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="BackgroundColor" Value="AliceBlue"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label x:Name="lbl1"
+                Text="These labels"
+                TextColor="DarkBlue"
+                Background="Aqua"
+                FontSize="30"/>
+            <Label x:Name="lbl2"
+                Text="These labels"
+                TextColor="Black"
+                VerticalOptions="Start"
+                Background="Violet"
+                HorizontalOptions="Start"
+                FontSize="10"/> 
+            <Label x:Name="lbl3"
+                TextColor="Magenta"
+                Text="These labels"
+                Background="Green"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="18"/>
+            <Button Text="modo oscuro"
+                    WidthRequest="300"
+                    HeightRequest="100"
+                    HorizontalOptions="Start"
+                    Clicked="Button_Clicked"
+                />
+            <Label Text="Label con estilo predefinido"
+                   Style="{StaticResource estiloEtiqueta1}"/>
+            
+            <Label Text="Label con estilo predefini2"
+                Style="{DynamicResource auxiliar}"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

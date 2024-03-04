@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Themes.Vistas.MainPage"
+            BackgroundColor="{DynamicResource colorFinalFondo}"
+            >
+    <!--BackgroundImageSource="{DynamicResource imagenFondo}"-->
+
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <Color x:Key="colorFondo">black</Color>
+            <Color x:Key="colorEtiqueta">Red</Color>
+            <x:Double x:Key="tamanoFuenteEtiqueta" >40</x:Double>
+            <x:String x:Key="tamaño">Title</x:String>
+
+            <Style x:Key="estilo1" TargetType="Label"><!--Este es explicito, solo se aplica cuando usamos el key, para hacerlo implicito solo ponemos el targetType-->
+                <Setter Property="TextColor" Value="{StaticResource colorEtiqueta}"></Setter>
+                <Setter Property="FontSize" Value="{StaticResource tamanoFuenteEtiqueta}"></Setter>
+            </Style>
+            
+          <!--  
+            <Color x:Key="colorInicialFondo">Red</Color>
+            <Color x:Key="colorMedioFondo">MistyRose</Color>
+            <Color x:Key="colorFinalFondo">White</Color>
+            -->
+        </ResourceDictionary>
+        
+        <!--PARTE 2-->
+        
+    </ContentPage.Resources>
+
+ 
+    <!--
+    <ContentPage.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset="0.0" Color="{StaticResource colorInicialFondo}"/>
+            <GradientStop Offset="0.8" Color="{StaticResource colorMedioFondo}"/>
+            <GradientStop Offset="1" Color="{StaticResource colorFinalFondo}"/>
+
+        </LinearGradientBrush>
+    </ContentPage.Background>
+   -->
+
+    <ScrollView>
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <FlyoutBase.ContextFlyout>
+            <MenuFlyout x:Name="PrimerSubmenu">
+                <MenuFlyoutSubItem >
+                    
+                </MenuFlyoutSubItem>
+            </MenuFlyout>
+        </FlyoutBase.ContextFlyout>
+        
+        <VerticalStackLayout.Resources>
+            <ResourceDictionary>
+                <Style x:Key="herencia" TargetType="Label" BasedOn="{StaticResource estilo1}">
+                    <Setter Property="BackgroundColor" Value="Blue"/>
+                </Style>
+
+            </ResourceDictionary>
+        </VerticalStackLayout.Resources>        
+        
+        <Label TextColor="{StaticResource colorEtiqueta}"
+               Text="Hola, tamaño con double"
+               FontSize="{StaticResource tamanoFuenteEtiqueta}">
+        </Label>
+
+        <Label TextColor="{StaticResource colorEtiqueta}"
+               Text="Hola, con string"
+               FontSize="{StaticResource tamaño}">
+        </Label>
+
+        <Label TextColor="{StaticResource colorEtiqueta}"
+               Text="Hola, title normal"
+               FontSize="Title">
+        </Label>
+
+        <Label Style="{StaticResource estilo1}"
+               Text="Hola, con estilos"/>
+
+        <Label Text="Texto arriba del boton, con herencia" Style="{StaticResource herencia}"/>
+
+        <Button Text="Pulsame" ToolTipProperties.Text="Holaaaaaa"
+                SemanticProperties.Description="Este boton es muy bueno, buenisimo, el mejor incluso"/>
+<!--PARTE 2-->
+       
+        <Grid RowDefinitions="1*,1*,3*,2*,1*" ColumnDefinitions="1*,2*,1*">
+            <Label FontSize="Title" VerticalOptions="End" HorizontalOptions="Center" Text="{DynamicResource titulo}" BackgroundColor="Azure" TextColor="Pink"
+                   Grid.Row="0" Grid.Column="1"></Label>
+            <Image Source="dotnet_bot.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"></Image>
+            <BoxView CornerRadius="10" Opacity="0.2" Grid.Row="2" Grid.Column="1" Color="{DynamicResource colorEtiqueta}"></BoxView>
+            <VerticalStackLayout Grid.Row="2" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Center">
+                <Label FontSize="Title" Text="HOlaaaaTabla"> </Label>
+                <Label FontSize="Title" Text="HOlaaaaTabla"></Label>
+                <Label FontSize="Title" Text="HOlaaaaTabla"></Label>
+                <Label FontSize="Title" Text="HOlaaaaTabla"></Label>
+                <Label FontSize="{DynamicResource tamanoLabel}" Text="Cambiar tamaño"></Label>
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

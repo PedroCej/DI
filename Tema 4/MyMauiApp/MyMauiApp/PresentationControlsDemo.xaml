@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiApp.PresentationControlsDemo"
+             Title="PresentationControlsDemo">
+    <ScrollView>
+        <VerticalStackLayout>
+            <BoxView Margin="20,0,20,0"  BackgroundColor="Black"
+                 HeightRequest="200"/>
+
+            <Label Text="MAUI" TextColor="Black"
+                   BackgroundColor="Aqua"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   />
+
+            <Ellipse Fill="DarkRed"
+                     Stroke="DarkGreen"
+                     StrokeThickness="20"
+                     HeightRequest="200"
+                     WidthRequest="200"
+                     HorizontalOptions="Center"/>
+
+            <Line Stroke="Black"
+                  X1="0"
+                  Y1="100"
+                  X2="100"
+                  Y2="50"
+                  StrokeThickness="20"
+                  />
+
+            <Rectangle Fill="Red"
+                       Stroke="Black"
+                       StrokeThickness="5"
+                       HeightRequest="150"
+                       WidthRequest="150"
+                       HorizontalOptions="Center"
+                       RadiusX="20"
+                       RadiusY="20"/>
+
+            <Polygon Fill="LightBlue"
+                     Points="40, 10, 70, 80 ,10 ,50"
+                     Stroke="DarkBlue"
+                     StrokeThickness="5"/>
+
+            <Polygon Fill="LightBlue"
+                    Points="40, 10, 70, 80 ,10 ,50"
+                    Stroke="Green"
+                    StrokeThickness="5"
+                     StrokeDashArray="1,1"
+                     StrokeDashOffset="6"
+                     />
+
+            <ImageButton Source="dotnet_bot.png"
+                         HeightRequest="300"
+                         WidthRequest="300"
+                         CornerRadius="150"/>
+
+            <WebView HeightRequest="1000"
+                Source="https://www.google.es"/>
+            <Polyline/>
+            
+      
+        </VerticalStackLayout>
+    </ScrollView> 
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLayout.MainPage">
+
+    <VerticalStackLayout Spacing="10">
+    <Label
+    Text="Clase DI"
+    TextColor="White"
+    BackgroundColor="Black"
+    FontSize="Large"
+ HorizontalOptions="Center"
+    VerticalOptions="Center"/>
+
+        <Label 
+Text="Probando"
+TextColor="White"
+BackgroundColor="Brown"
+FontSize="Large"
+            HorizontalTextAlignment="Center"/>
+        
+
+
+    </VerticalStackLayout>
+
+
+</ContentPage>

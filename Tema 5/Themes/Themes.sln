@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes.csproj", "{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D94489B-70FB-4748-B2ED-CB7CF8E4D365}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AB9D3CC-FB8C-4AC8-B627-2BA112C2AD72}
+	EndGlobalSection
+EndGlobal

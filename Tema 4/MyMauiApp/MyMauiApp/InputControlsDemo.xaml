@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiApp.InputControlsDemo"
+             Title="InputControlsDemo">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Label 
+                Text="Selecciona para continuar"/>
+            
+            <CheckBox
+                IsChecked="True"
+                CheckedChanged="CheckBox_CheckedChanged"/>
+
+        </HorizontalStackLayout>
+
+        <Slider
+            x:Name="slider"
+            Minimum="0"
+            Maximum="10"
+            MinimumTrackColor="Yellow"
+            MaximumTrackColor="Green"
+            ThumbColor="Red"
+            ValueChanged="slider_ValueChanged"/>
+        <Label
+            x:Name="sliderLabel"/>
+
+        <Switch
+            IsToggled="True"
+            Toggled="Switch_Toggled"/>
+
+        <DatePicker
+            x:Name="fecha"
+            DateSelected="fecha_DateSelected"/>
+
+        <TimePicker
+            x:Name="hora"
+            />
+
+    </VerticalStackLayout>
+</ContentPage>

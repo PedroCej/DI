@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ProyectoPruebas.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ProyectoPruebas"
+    Shell.FlyoutBehavior="Disabled"
+    Title="ProyectoPruebas">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label x:Name="lblTitulo"
+                Text="DAM"
+               FontFamily="minecraft"
+               FontSize="40"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+            <Button Text="Pulsame">
+                
+            </Button>
+        </HorizontalStackLayout>
+        
+        
+
+
+    </Shell.TitleView>
+
+    <TabBar>
+        <ShellContent 
+        Title="Inicio" 
+        ContentTemplate="{DataTemplate local:NewPage1}"
+        />
+        <ShellContent Title="Login" ContentTemplate="{DataTemplate local:NewPage2}"/>
+
+    </TabBar>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <Shell.FlyoutHeader>
+        <FlyoutItem Title="Login" Icon="moon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:NewPage1}"/>
+        </FlyoutItem>
+    </Shell.FlyoutHeader>
+
+    <MenuItem Text="Conectar" Clicked="MenuItem_Clicked"/>
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <Label  ></Label>
+            <Entry x:Name="usuario" Placeholder="Usuario"></Entry>
+            <Entry x:Name="pass" Placeholder="Contraseña" ></Entry>
+            
+            
+            
+            
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

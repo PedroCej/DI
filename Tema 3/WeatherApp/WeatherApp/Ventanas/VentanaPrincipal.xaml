@@ -1,0 +1,44 @@
+﻿<Window x:Class="WeatherApp.VentanaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:WeatherApp.ControlesUsuario"
+        mc:Ignorable="d"
+        Title="Weather" 
+        Height="450" 
+        Width="800"
+        Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="imagenBitmap" Grid.Column="0" Stretch="Uniform" VerticalAlignment="Center" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical" Margin="0,0,30,0">
+            <TextBlock x:Name="txtCiudad" Text="" FontSize="36pt" FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="txtTemperatura" Text="" FontSize="18pt" FontWeight="Bold" Foreground="White"/>
+        </StackPanel>
+        <Border Grid.ColumnSpan="2" CornerRadius="5" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,30,0">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbFarenheit" GroupName="Degree" Foreground="White" IsChecked="False" Click="rbFarenheit_Click" >Fº</RadioButton>
+                <RadioButton x:Name="rbCelsius" GroupName="Degree" Foreground="White" IsChecked="True" Click="rbCelsius_Click">Cº</RadioButton>
+            </StackPanel>
+        </Border>
+        <Expander ExpandDirection="Left" HorizontalAlignment="Right" Grid.Column="1" Background="Gray">
+            <Expander.Header>
+                <TextBlock Text="Búsqueda" >
+                    <TextBlock.LayoutTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </Expander.Header>
+            <uc:Busqueda x:Name="ciudadesControlUsuario"/>
+        </Expander>
+    </Grid>
+</Window>

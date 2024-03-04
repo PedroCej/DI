@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Themes.MisTemas.Tema2">
+
+    <x:String x:Key="imagenFondo">fondo_claro.jpg</x:String>
+
+    <Color x:Key="colorInicialFondo">MistyRose</Color>
+    <Color x:Key="colorMedioFondo">MistyRose</Color>
+    <Color x:Key="colorFinalFondo">White</Color>
+
+    <Color x:Key="colorFuenteEtiqueta">Black</Color>
+</ResourceDictionary>

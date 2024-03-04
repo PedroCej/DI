@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiApp.CommandsControlDemo"
+             Title="CommandsControlDemo">
+    <ScrollView>
+
+        <VerticalStackLayout>
+
+            <Label
+                
+                x:Name="miLabel"
+                Text="DI"
+                />
+
+            <Button
+                
+                x:Name="miBoton"
+                Text="Haz click aqui!"
+                    Clicked="miBoton_Clicked"/>
+
+            <ImageButton
+                
+                Source="dotnet_bot.png"
+                Clicked="miBoton_Clicked"
+                WidthRequest="1000"/>
+
+            <RadioButton
+                IsChecked="True"
+                Content="Opcion 1"
+                GroupName="grupo1"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton
+                Content="Opcion 2"
+                GroupName="grupo1"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton
+                Content="Opcion 3"
+                GroupName="grupo1"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton
+                IsChecked="True"
+                Content="Opcion 4"
+                GroupName="grupo2"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton
+                Content="Opcion 5"
+                GroupName="grupo2"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+
+            <SearchBar
+                x:Name="barraBusqueda"
+                SearchButtonPressed="barraBusqueda_SearchButtonPressed"
+                />
+
+
+            
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

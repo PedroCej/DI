@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Themes.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Themes"
+    xmlns:misPaginas="clr-namespace:Themes.Vistas"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Themes">
+
+    <Shell.ToolbarItems>
+        <ToolbarItem x:Name="botonTema" Text="Themes" Order="Primary" Clicked="botonTema_Clicked">
+            
+        </ToolbarItem>
+    </Shell.ToolbarItems>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate misPaginas:MainPage}"
+        Route="MainPage" />
+    <Shell.FlyoutHeight>2000</Shell.FlyoutHeight>
+
+</Shell>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Themes.Vistas.personalizarTemas"
+             Title="personalizarTemas">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" RadioButtonGroup.GroupName="Temas">
+        <RadioButton Value="0" IsChecked="True" Content="Tema Original" GroupName="Temas" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+        <RadioButton Value="1" Content="Tema Claro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+        <RadioButton Value="2" Content="Tema Oscuro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+
+
+        <Picker SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Español</x:String>
+                    <x:String>Ingles</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Slider x:Name="miSlider" ValueChanged="Slider_ValueChanged"/>
+        <Label Text="Prueba" FontSize="{DynamicResource tamanoLabel}"/>
+    </VerticalStackLayout>
+</ContentPage>
