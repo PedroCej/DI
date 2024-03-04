@@ -36,12 +36,12 @@ public partial class SeleccionarPerfil : ContentPage
 
     private void btnUsuarioInvitado_Pressed(object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new MainPage());
+        Application.Current.MainPage = new AppShell_Inicio();
     }
 
     private async void ImageButton_Pressed(object sender, EventArgs e)
     {
-            await Navigation.PushAsync(new Login(this));
+        await Navigation.PushAsync(new Login(this));
 
     }
 }

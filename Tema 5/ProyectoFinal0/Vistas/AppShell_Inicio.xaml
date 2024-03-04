@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ProyectoFinal0.AppShell_Inicio"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ProyectoFinal0"
+    xmlns:misPaginas="clr-namespace:ProyectoFinal0.Vistas"
+    Shell.FlyoutBehavior="Flyout"
+    Title="ProyectoFinal0"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+
+    <FlyoutItem Title="Inicio">
+        <ShellContent Title="Main" ContentTemplate="{DataTemplate misPaginas:MainPage}"></ShellContent>
+        <ShellContent Title="Otro"  ContentTemplate="{DataTemplate misPaginas:MainPage}"></ShellContent>
+    </FlyoutItem>
+
+
+</Shell>

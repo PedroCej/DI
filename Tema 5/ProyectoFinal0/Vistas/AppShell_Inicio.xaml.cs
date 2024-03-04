@@ -1,8 +1,8 @@
 ﻿namespace ProyectoFinal0
 {
-    public partial class AppShell : Shell
+    public partial class AppShell_Inicio : Shell
     {
-        public AppShell()
+        public AppShell_Inicio()
         {
             InitializeComponent();
         }

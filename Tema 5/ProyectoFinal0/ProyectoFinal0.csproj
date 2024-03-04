@@ -79,6 +79,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Vistas\AppShell_Login.xaml.cs">
+	    <DependentUpon>AppShell_Login.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Vistas\AppShell_Inicio.xaml.cs">
+	    <DependentUpon>AppShell_Inicio.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Vistas\AppShell_Inicio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
