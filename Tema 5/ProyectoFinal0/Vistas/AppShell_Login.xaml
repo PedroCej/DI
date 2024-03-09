@@ -5,11 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoFinal0"
     xmlns:misPaginas="clr-namespace:ProyectoFinal0.Vistas"
-    Title="ProyectoFinal0">
+    Title="DisneyTracker">
 
  
     <ShellContent
-        Title="Pagina principal"
         ContentTemplate="{DataTemplate misPaginas:SeleccionarPerfil}"
         Route="MainPage" />
 

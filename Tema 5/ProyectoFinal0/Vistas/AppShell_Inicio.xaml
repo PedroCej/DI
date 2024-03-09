@@ -5,16 +5,49 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoFinal0"
     xmlns:misPaginas="clr-namespace:ProyectoFinal0.Vistas"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
     Shell.FlyoutBehavior="Flyout"
-    Title="ProyectoFinal0"
+    Title="Disney Tracker"
     FlyoutBackgroundImageAspect="AspectFill"
-    FlyoutHeaderBehavior="CollapseOnScroll">
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutWidth="200">
 
 
-    <FlyoutItem Title="Inicio">
-        <ShellContent Title="Main" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
-        <ShellContent Title="Otro"  ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+    <FlyoutItem Title="Inicio" Shell.BackgroundColor="{DynamicResource ColorFondoPrimario}">
+        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+        <ShellContent Title="Favoritos" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="Ajustes">
+        <ShellContent ContentTemplate="{DataTemplate misPaginas:Ajustes}"></ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="Acerca De">
+        <ShellContent ContentTemplate="{DataTemplate misPaginas:Ajustes}"></ShellContent>
+    </FlyoutItem>
+    <FlyoutItem x:Name="itemAdmin" Title="Admin">
+        <ShellContent ContentTemplate="{DataTemplate misPaginas:Admin}"></ShellContent>
+    </FlyoutItem>
+    <FlyoutItem Title="Salir">
+        <ShellContent ContentTemplate="{DataTemplate misPaginas:Salir}"></ShellContent>
     </FlyoutItem>
 
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout Padding="0,10,0,30">
+                <Label Text="{DynamicResource user}"
+                       FontSize="Title"
+                       TextColor="DodgerBlue"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" 
+                       Margin="0,0,0,10"/>
+                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0: HH:MM}'}"
+                       TextColor="GhostWhite"
+                       HorizontalOptions="Center" />
+                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:dd/MM/yyyy}'}"
+                       TextColor="GhostWhite"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 
 </Shell>

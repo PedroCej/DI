@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal0.Resources.MisTemas.TemaDefault">
+
+    <x:String x:Key="imagenFondo">fondo_original.jpg</x:String>
+    <Color x:Key="ColorFondoPrimario">#000127</Color>
+    
+    <!-- LABELS -->
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <Style TargetType="Label" x:Key="lblTitulo">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap" />
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="TextDecorations" Value="Underline" />
+    </Style>
+    <Style TargetType="Label" x:Key="lblTitulo2">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+    </Style>
+    
+    <!-- BOTONES -->
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BackgroundColor" Value="#30ACAF99"/>
+        <Setter Property="TextTransform" Value="Uppercase" />
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+        <Setter Property="FontSize" Value="20" />
+        
+    </Style>
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>

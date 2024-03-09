@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal0.Vistas.Ajustes"
+             BackgroundImageSource="{DynamicResource imagenFondo}"
+             >
+
+    
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" RadioButtonGroup.GroupName="Temas" Spacing="10">
+        <Label Text="Cambiar tema" Style="{DynamicResource lblTitulo}"/>
+        <RadioButton Value="0" IsChecked="True" Content="Tema Original" GroupName="Temas" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+        <RadioButton Value="1" Content="Tema Claro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+        <RadioButton Value="2" Content="Tema Oscuro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+
+
+        <HorizontalStackLayout Margin="0,40,0,40" HorizontalOptions="Start" Spacing="10">
+
+            <Label Text="Cambiar idioma -->" VerticalOptions="CenterAndExpand" Style="{DynamicResource lblTitulo2}"/>
+            <Picker SelectedIndexChanged="Picker_SelectedIndexChanged" SelectedIndex="0" WidthRequest="40" HeightRequest="40">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Español</x:String>
+                        <x:String>Ingles</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </HorizontalStackLayout>
+        
+        
+        <Slider x:Name="miSlider" ValueChanged="Slider_ValueChanged"/>
+        
+        <Label Text="Titulo" Style="{DynamicResource lblTitulo}"/>
+        <Label Text="Subtitulo" Style="{DynamicResource lblTitulo2}"/>
+        <Label Text="Así seran los textos del resto de la aplicación" />
+        
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -2,14 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal0.Vistas.Inicio"
-             Title="Inicio">
-    <VerticalStackLayout>
-        <SearchBar Margin="100,25,100,0" Placeholder="Busca aquí..." HorizontalOptions="FillAndExpand"/>
-        <Grid x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" />
-        <HorizontalStackLayout Margin="0,30,0,20" HorizontalOptions="Center">
-            <Button x:Name="btnSiguiente" Text="Anterior"  Clicked="btnSiguiente_Clicked"/>
-            <Button x:Name="btnAnterior"  Text="Siguiente" Clicked="btnSiguiente_Clicked"/>
-        </HorizontalStackLayout>
+             Title=""
+             BackgroundImageSource="{DynamicResource imagenFondo}"
+             >
+    <ScrollView x:Name="miScroll" >
+        <VerticalStackLayout >
+            <SearchBar Margin="150,25,150,25" Placeholder="Busca aquí..." HorizontalOptions="FillAndExpand" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+            <Grid Padding="150,0,150,0" x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" RowSpacing="40"/>
 
-    </VerticalStackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,20,0,20" BackgroundColor="#44A6ACAF">
+                <HorizontalStackLayout   HorizontalOptions="Center">
+                    <Button x:Name="btnAnterior" Text="Anterior"  Clicked="btnAnterior_Clicked"  CornerRadius="10" />
+                    <Label x:Name="lblPagina"  VerticalTextAlignment="Center" Padding="10,0,10,0" HorizontalTextAlignment="Start"/>
+                    <Button x:Name="btnSiguiente"  Text="Siguiente" Clicked="btnSiguiente_Clicked"  CornerRadius="10" Margin="0,0,4,0"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

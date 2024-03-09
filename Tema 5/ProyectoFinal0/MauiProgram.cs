@@ -13,6 +13,7 @@ namespace ProyectoFinal0
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("waltographUI.ttf", "Waltograph");
                 });
 
 #if DEBUG

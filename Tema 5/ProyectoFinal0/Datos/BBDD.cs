@@ -25,8 +25,6 @@ namespace ProyectoFinal0.Datos
             conexion = new SQLiteConnection("Data Source = C:\\Users\\perki\\Desktop\\DI\\Tema 5\\ProyectoFinal0\\Datos\\miDB.db; Version = 3; New = False; Compress = True; ");
             conexion.Open();
           
-                
-            
         }// fin conectar
 
 
@@ -38,7 +36,17 @@ namespace ProyectoFinal0.Datos
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex) { }
+        }
 
+
+        public void EliminarUser(string user)
+        {
+            comando = new SQLiteCommand($" DELETE FROM Logins WHERE Usuario='{user}' ", conexion);
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
 
         }
 
@@ -66,8 +74,6 @@ namespace ProyectoFinal0.Datos
                
         }
 
-
-
         public bool RegisterTry(String usuario)
         {
             comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}'", conexion);
@@ -82,6 +88,65 @@ namespace ProyectoFinal0.Datos
                     return true;
                 }
             }catch (Exception ex) {
+                return false;
+            }
+            return false;
+        }
+
+        public int getNumUsers()
+        {
+            int cant = 0;
+            comando = new SQLiteCommand($"SELECT * FROM Logins", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Logins");
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Logins"].Rows)
+                {
+                    cant++;
+                }
+            }
+            return cant;
+        }
+
+        //
+        //  METODOS DEL ADMIN
+        //
+        public List<string> getAllUsers()
+        {
+            List<string> lista= new List<string>();
+            comando = new SQLiteCommand($"SELECT * FROM Logins", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Logins");
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Logins"].Rows)
+                {
+                    lista.Add(row[1].ToString());
+                }
+            }
+            return lista;
+        }
+        
+        public bool EsAdmin(String usuario)
+        {
+            comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}' AND TipoUsuario='0'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            try
+            {
+                adaptador.Fill(ds, "Logins");
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return true; // es admin
+                }
+            }
+            catch (Exception ex)
+            {
                 return false;
             }
             return false;

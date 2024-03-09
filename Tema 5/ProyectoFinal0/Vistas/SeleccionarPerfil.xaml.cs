@@ -56,19 +56,24 @@ public partial class SeleccionarPerfil : ContentPage
     }
 
     private void btnUsuarioInvitado_Pressed(object sender, EventArgs e)
-    {
+    { 
         Application.Current.MainPage = new AppShell_Inicio();
     }
 
-    //Pulsar un perfil que no sea invitado
+    
+    /// <summary>
+    /// Pulsar un perfil que no sea invitado
+    /// </summary>
+    /// <param name="sender">Boton de cualquier perfil</param>
+    /// <param name="e"></param>
     private async void ImageButton_Pressed(object sender, EventArgs e)
     {
-        string pass = await DisplayPromptAsync("Introduce contraseña","");
         ImageButton botonPresionado = sender as ImageButton;
-        
-        if (miBBDD.LoginTry(botonPresionado.AutomationId.ToString(), pass)) // si usuairo y contraseña extan registrados
+        string pass = await DisplayPromptAsync("Introduce contraseña","");
+        string user = botonPresionado.AutomationId.ToString();
+        if (miBBDD.LoginTry(user, pass)) // si usuairo y contraseña extan registrados
         {
-            Application.Current.MainPage = new AppShell_Inicio();  // carga el shell Inicio de la aplicacion
+            Application.Current.MainPage = new AppShell_Inicio(user);  // carga el shell Inicio de la aplicacion
         }
         else
         {
@@ -79,9 +84,40 @@ public partial class SeleccionarPerfil : ContentPage
         }
     }
 
-    //Boton añadir perfil
+    /// <summary>
+    /// Boton para ir a la pagina de registro, crear un perfil
+    /// </summary>
+    /// <param name="sender">ImageButton</param>
+    /// <param name="e"></param>
     private void ImageButton_Pressed_1(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Login(this));
+        if(miBBDD.getNumUsers()<6)
+        {
+            Navigation.PushAsync(new Login(this));
+        }
+        else
+        {
+            DisplayAlert("No puedes crear mas usuarios","El limite de usuarios es 6, si quieres añadir uno mas contacta con el administrador de la cuenta.","Aceptar");
+        }
+        
+    }
+
+    
+    /// <summary>
+    /// Evento de pulsar el boton para editar los usuarios
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void Button_Clicked_1(object sender, EventArgs e)
+    {
+        string pass = await DisplayPromptAsync("Introduce contraseña de administrador", "");
+        if (miBBDD.LoginTry("admin", pass))
+        {
+            await Navigation.PushAsync(new Admin());
+        }
+        else
+        {
+            DisplayAlert("Contraseña incorrecta", "", "Volver");
+        }
     }
 }
