@@ -5,14 +5,14 @@
              BackgroundImageSource="fondo_textura.jpg">
 
     <ScrollView>
-        <VerticalStackLayout
+        <VerticalStackLayout 
         VerticalOptions="Center"
         HorizontalOptions="Center"
             Padding="0,50,0,50">
 
 
 
-            <Grid SemanticProperties.Description="seleccionar foto de perfil" RowSpacing="5" ColumnSpacing="5" Margin="0,0,0,20" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+            <Grid ToolTipProperties.Text="Elige una foto de perfil" SemanticProperties.Description="seleccionar foto de perfil" RowSpacing="5" ColumnSpacing="5" Margin="0,0,0,20" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
 
 
 
@@ -47,9 +47,20 @@
         </Grid>
 
 
-            <Entry SemanticProperties.Description="nombre de usuario" x:Name="txtUser" Placeholder="Usuario" HeightRequest="50" WidthRequest="400" FontSize="25" Margin="0,20,0,0"/>
-            <Entry SemanticProperties.Description="contraseña" x:Name="txtPass" Placeholder="Contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,0"/>
-            <Entry SemanticProperties.Description="repetir contraseña" x:Name="txtPass2" Placeholder="Repite contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,40"/>
+            <Entry ToolTipProperties.Text="nombre de usuario" SemanticProperties.Description="nombre de usuario" x:Name="txtUser" 
+                   Placeholder="Usuario" HeightRequest="50" WidthRequest="400" FontSize="25" Margin="0,20,0,0">
+                <FlyoutBase.ContextFlyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Borrar" Clicked="MenuFlyoutItem_Clicked">
+                            <MenuFlyoutItem.KeyboardAccelerators>
+                                <KeyboardAccelerator Modifiers="Ctrl" Key="B"/>
+                            </MenuFlyoutItem.KeyboardAccelerators>
+                        </MenuFlyoutItem>
+                    </MenuFlyout>
+                </FlyoutBase.ContextFlyout>
+            </Entry>
+            <Entry ToolTipProperties.Text="contraseña" SemanticProperties.Description="contraseña" x:Name="txtPass" Placeholder="Contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,0"/>
+            <Entry ToolTipProperties.Text="repite contraseña" SemanticProperties.Description="repetir contraseña" x:Name="txtPass2" Placeholder="Repite contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,40"/>
 
 
 
@@ -58,7 +69,7 @@
                     Pressed="btnConfirmar_Pressed"
                     Margin="0,0,20,0"
                     WidthRequest="200"/>
-                <Button SemanticProperties.Description="cancelar" Text="Cancelar" x:Name="btnCancelar"
+                <Button ToolTipProperties.Text="Volver a la pagina de inicio" SemanticProperties.Description="cancelar" Text="Cancelar" x:Name="btnCancelar"
                     Pressed="btnCancelar_Pressed"
                     WidthRequest="200"/>
         </HorizontalStackLayout>

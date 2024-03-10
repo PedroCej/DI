@@ -7,6 +7,9 @@ public partial class Inicio : ContentPage
 	DisneyAPI api;
 	private int pagina = 1;
 
+    /// <summary>
+    /// Pagina principal de la aplicacion
+    /// </summary>
 	public Inicio()
 	{
 		InitializeComponent();
@@ -22,6 +25,11 @@ public partial class Inicio : ContentPage
         }		
 	}
 
+    /// <summary>
+    /// Pagina siguiente
+    /// </summary>
+    /// <param name="sender">Button</param>
+    /// <param name="e"></param>
     private async void btnSiguiente_Clicked(object sender, EventArgs e)
     {
         if(pagina<api.getNumeroPaginas())
@@ -44,6 +52,11 @@ public partial class Inicio : ContentPage
         }
 
     }
+    /// <summary>
+    /// Pagina anterior
+    /// </summary>
+    /// <param name="sender">Button</param>
+    /// <param name="e"></param>
     private async void btnAnterior_Clicked(object sender, EventArgs e)
     {
         if (pagina > 1)
@@ -68,9 +81,9 @@ public partial class Inicio : ContentPage
     }
 
     /// <summary>
-    /// Rellena el grid que contiene imagenes y nombres de personajes
+    /// Rellena el grid que contiene imagenes y nombres de personajes del json
     /// </summary>
-    /// <param name="pagina"></param>
+    /// <param name="pagina">pagina que vamos</param>
 	private async void llenarGrid(int pagina)
 	{       
         await api.LlenarJsonPersonajes(pagina);        
@@ -124,6 +137,10 @@ public partial class Inicio : ContentPage
         }//for1
 	} // llenar grid
 
+    /// <summary>
+    /// Llenar el grid cuando buscamos en la searchbar, del json
+    /// </summary>
+    /// <param name="busqueda">parametro de busqueda</param>
     private async void llenarGrid(string busqueda)
     {
         await api.LlenarJsonPersonajes(busqueda);
@@ -177,6 +194,11 @@ public partial class Inicio : ContentPage
         }//for1
     } // llenar grid con string
 
+    /// <summary>
+    /// Click a un personaje
+    /// </summary>
+    /// <param name="sender">Button</param>
+    /// <param name="e"></param>
     private void btnPersonaje_Clicked(object sender, EventArgs e)
     {
         ImageButton botonPresionado = sender as ImageButton;
@@ -185,7 +207,11 @@ public partial class Inicio : ContentPage
 
         
     }
-
+    /// <summary>
+    /// Buscar en la barra de busqueda
+    /// </summary>
+    /// <param name="sender">SEarchBar</param>
+    /// <param name="e"></param>
     private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
     {
         SearchBar searchBar = sender as SearchBar;

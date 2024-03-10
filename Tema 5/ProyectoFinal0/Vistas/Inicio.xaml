@@ -7,7 +7,7 @@
              >
     <ScrollView x:Name="miScroll" >
         <VerticalStackLayout >
-            <SearchBar SemanticProperties.Description="Barra de busqueda" Margin="150,25,150,25" Placeholder="{DynamicResource BuscaAqui}" HorizontalOptions="FillAndExpand" SearchButtonPressed="SearchBar_SearchButtonPressed" BackgroundColor="{DynamicResource ColorFondoPrimario}"/>
+            <SearchBar ToolTipProperties.Text="Prueba a escribir: Mickey Mouse, Goofy, Cenicienta o..." SemanticProperties.Description="Barra de busqueda" Margin="150,25,150,25" Placeholder="{DynamicResource BuscaAqui}" HorizontalOptions="FillAndExpand" SearchButtonPressed="SearchBar_SearchButtonPressed" BackgroundColor="{DynamicResource ColorFondoPrimario}"/>
             <Grid SemanticProperties.Description="Personajes" Padding="150,0,150,0" x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" RowSpacing="40"/>
 
             <StackLayout SemanticProperties.Description="cambiar de pagina" HorizontalOptions="FillAndExpand" Padding="0,20,0,20" BackgroundColor="#44A6ACAF">

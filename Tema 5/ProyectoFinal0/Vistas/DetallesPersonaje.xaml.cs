@@ -8,20 +8,29 @@ public partial class DetallesPersonaje : ContentPage
 	int id;
 	DisneyAPI disneyAPI;
     BBDD db = new BBDD();
+    /// <summary>
+    /// Pagina de toda la informacion de un personaje
+    /// </summary>
+    /// <param name="api">API para sobre la misma hacer una busqueda</param>
+    /// <param name="id">Id del personaje a buscar</param>
 	public DetallesPersonaje(DisneyAPI api,int id)
 	{
 		InitializeComponent();
 		this.id = id;
 		disneyAPI = api;
+
 		
 		llenarPagina();
         if (AppShell_Inicio.tipoUser == 1)
         {
             btnFav.IsVisible = false;
         }
-        SemanticScreenReader.Default.Announce("Estas viendo detalles de " + disneyAPI.getNombre());
+        
     }
 
+    /// <summary>
+    /// Llenar pagina de informacion del personaje
+    /// </summary>
 	private async void llenarPagina()
 	{
         await disneyAPI.llenarJsonUnPersonaje(id);
@@ -109,6 +118,11 @@ public partial class DetallesPersonaje : ContentPage
             lblEnemigos.Text = "";
     }
 
+    /// <summary>
+    /// Si añades a favoritos el personaje, se guarda en la base de datos 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnFav_Clicked(object sender, EventArgs e)
     {
         string user = Application.Current.Resources["user"].ToString();

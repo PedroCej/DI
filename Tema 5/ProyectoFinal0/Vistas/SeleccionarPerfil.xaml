@@ -5,14 +5,26 @@
              BackgroundImageSource="fondo_textura.jpg">
     <VerticalStackLayout HorizontalOptions="Center" Margin="20,20,20,20">
 
+        <FlyoutBase.ContextFlyout>
+            <MenuFlyout>
+                <MenuFlyoutItem Text="Iniciar como invitado" Clicked="btnUsuarioInvitado_Pressed">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Ctrl" Key="B"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+            </MenuFlyout>
+        </FlyoutBase.ContextFlyout>
         <Button
         Text="{DynamicResource EditarPerfiles}"
+            ToolTipProperties.Text="Podrá eliminar perfiles"
         FontSize="Body"
         HeightRequest="50"
         WidthRequest="150"
         CornerRadius="20" 
         VerticalOptions="End"
-        Clicked="Button_Clicked_1" HorizontalOptions="End"/>
+        Clicked="Button_Clicked_1" HorizontalOptions="End">
+            
+        </Button>
 
         <Label
         Text="{DynamicResource Seleccionaunperfil}"
@@ -23,16 +35,18 @@
         <HorizontalStackLayout HorizontalOptions="Center" x:Name="hlayoutPerfiles" VerticalOptions="CenterAndExpand">
 
             <VerticalStackLayout>
-                <ImageButton SemanticProperties.Description="Usuario invitado" x:Name="btnUsuarioInvitado" Source="invitado.png" Aspect="AspectFill"  HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="btnUsuarioInvitado_Pressed"/>
+                <ImageButton ToolTipProperties.Text="Iniciar como invitado" SemanticProperties.Description="Usuario invitado" x:Name="btnUsuarioInvitado" Source="invitado.png" Aspect="AspectFill"  HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="btnUsuarioInvitado_Pressed"/>
                 <Label Text="{DynamicResource Invitado}" HorizontalOptions="Center" Margin="0,10,0,0" Opacity="0.9"/> 
             </VerticalStackLayout>
 
             <VerticalStackLayout Margin="20,0,0,0">
-                <ImageButton SemanticProperties.Description="Crear usuario" Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed_1"/>
+                <ImageButton ToolTipProperties.Text="Crear perfil" SemanticProperties.Description="Crear usuario" Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed_1"/>
                 <Label Text="{DynamicResource AnadirPerfil}" HorizontalOptions="Center" Margin="0,10,0,0"/>
             </VerticalStackLayout>
 
     </HorizontalStackLayout>
 
     </VerticalStackLayout>
+    
+
 </ContentPage>

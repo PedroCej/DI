@@ -5,12 +5,20 @@ using Resources.Idiomas;
 
 public partial class Ajustes : ContentPage
 {
+    /// <summary>
+    /// Pagina de ajustes
+    /// </summary>
 	public Ajustes()
 	{
 		InitializeComponent();
         ICollection<ResourceDictionary> miListaDiccionarios = Application.Current.Resources.MergedDictionaries;
     }
 
+    /// <summary>
+    /// Cambiar de tema
+    /// </summary>
+    /// <param name="sender">Radio Button</param>
+    /// <param name="e"></param>
     private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         RadioButton miRadioButton = sender as RadioButton;
@@ -36,6 +44,11 @@ public partial class Ajustes : ContentPage
         }
     }
 
+    /// <summary>
+    /// Cambiar de idioma
+    /// </summary>
+    /// <param name="sender">Picker</param>
+    /// <param name="e"></param>
     private void Picker_SelectedIndexChanged(object sender, EventArgs e)
     {
         Picker miPicker = sender as Picker;
@@ -58,6 +71,11 @@ public partial class Ajustes : ContentPage
 
     }
 
+    /// <summary>
+    /// Cambiar tamaño de letra
+    /// </summary>
+    /// <param name="sender">Slider</param>
+    /// <param name="e"></param>
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
         Slider slider = sender as Slider;

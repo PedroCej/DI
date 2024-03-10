@@ -7,6 +7,9 @@ namespace ProyectoFinal0.Vistas;
 public partial class Admin : ContentPage
 {
 	BBDD db = new BBDD();
+	/// <summary>
+	/// Pagina de admin
+	/// </summary>
 	public Admin()
 	{
 		InitializeComponent();
@@ -19,6 +22,11 @@ public partial class Admin : ContentPage
 
     }
 
+	/// <summary>
+	/// Eliminar el usuario seleccionado en el listview
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
     private void Button_Clicked(object sender, EventArgs e)
     {
 		try

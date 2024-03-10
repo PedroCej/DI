@@ -45,6 +45,11 @@ namespace ProyectoFinal0.Servicios
             }
             return true;
         }
+        /// <summary>
+        /// llenar json cuando usamos la barra de navegacion
+        /// </summary>
+        /// <param name="buscar">parametro de busqueda</param>
+        /// <returns>task bool si se completa = true</returns>
         public async Task<bool> LlenarJsonPersonajes(string buscar)
         {
             string respuesta;
@@ -67,7 +72,11 @@ namespace ProyectoFinal0.Servicios
             }
             return true;
         }
-
+        /// <summary>
+        /// Llenar el json secundario para un personaje
+        /// </summary>
+        /// <param name="id">id del personaje</param>
+        /// <returns>task bool si se completa = true</returns>
         public async Task<bool> llenarJsonUnPersonaje(int id)
         {
             string respuesta;
@@ -95,6 +104,10 @@ namespace ProyectoFinal0.Servicios
         //  METODOS JSON PRINCIPAL
         //
 
+        /// <summary>
+        /// Lista de nombres del json
+        /// </summary>
+        /// <returns>List of strings</returns>
         public List<string> ObtenerListaNombres()
         {
             List<string> lista = new List<string>();
@@ -106,6 +119,10 @@ namespace ProyectoFinal0.Servicios
             return lista;
         }
 
+        /// <summary>
+        /// Lista de fotos en una pagina del json, se relacionan con el nombre por la posicion en la lista
+        /// </summary>
+        /// <returns>List de strings</returns>
         public List<string> ObtenerListaFotos()
         {
             List<string> lista = new List<string>();
@@ -129,6 +146,10 @@ namespace ProyectoFinal0.Servicios
         //  METODOS JSON SECUNDARIO (un personaje)
         //
 
+        /// <summary>
+        /// Peliculas del personaje
+        /// </summary>
+        /// <returns>List de strings</returns>
         public List<string> getPeliculas()
         {
             List<string> lista = new List<string>();
@@ -141,6 +162,10 @@ namespace ProyectoFinal0.Servicios
             return lista;
         }
 
+        /// <summary>
+        /// Lista de cortos del personaje (json)
+        /// </summary>
+        /// <returns>Lisa de strings</returns>
         public List<string> getCortos()
         {
             List<string> lista = new List<string>();
@@ -152,7 +177,10 @@ namespace ProyectoFinal0.Servicios
             }
             return lista;
         }
-
+        /// <summary>
+        /// Consulta en el json las series de un personaje
+        /// </summary>
+        /// <returns>List de strings</returns>
         public List<string> getSeries()
         {
             List<string> lista = new List<string>();
@@ -165,6 +193,10 @@ namespace ProyectoFinal0.Servicios
             return lista;
         }
 
+        /// <summary>
+        /// Consulta en el json para tener una lista de juegos
+        /// </summary>
+        /// <returns>Lista de strings</returns>
         public List<string> getJuegos()
         {
             List<string> lista = new List<string>();
@@ -176,7 +208,10 @@ namespace ProyectoFinal0.Servicios
             }
             return lista;
         }
-
+        /// <summary>
+        /// Lista de amigos
+        /// </summary>
+        /// <returns>Lista con strings</returns>
         public List<string> getAmigos()
         {
             List<string> lista = new List<string>();
@@ -188,6 +223,10 @@ namespace ProyectoFinal0.Servicios
             }
             return lista;
         }
+        /// <summary>
+        /// Lista de enemigos
+        /// </summary>
+        /// <returns>lista con strings de enemigos</returns>
         public List<string> getEnemigos()
         {
             List<string> lista = new List<string>();
@@ -199,16 +238,28 @@ namespace ProyectoFinal0.Servicios
             }
             return lista;
         }
+        /// <summary>
+        /// Enlace de mas informacion
+        /// </summary>
+        /// <returns>string con la url</returns>
         public string getMasInfo()
         {
             return jsonPersonaje.RootElement.GetProperty("data").GetProperty("sourceUrl").ToString();
 
         }
+        /// <summary>
+        /// Imagen del personaje
+        /// </summary>
+        /// <returns>string con enlace</returns>
         public string getImagen()
         {
             return jsonPersonaje.RootElement.GetProperty("data").GetProperty("imageUrl").ToString();
 
         }
+        /// <summary>
+        /// Nombre de personaje
+        /// </summary>
+        /// <returns>string nombre</returns>
         public string getNombre()
         {
             return jsonPersonaje.RootElement.GetProperty("data").GetProperty("name").ToString();
@@ -223,6 +274,10 @@ namespace ProyectoFinal0.Servicios
 
         //Metodos secundarios, se usan para ubicarse en el json
 
+        /// <summary>
+        /// Consulta el numero de paginas que tiene el json
+        /// </summary>
+        /// <returns></returns>
         public int getNumeroPaginas()
         {
             return json.RootElement.GetProperty("info").GetProperty("totalPages").GetInt32();
@@ -238,7 +293,10 @@ namespace ProyectoFinal0.Servicios
             return json.RootElement.GetProperty("data")[pos].GetProperty("_id").GetInt32();
              
         }
-
+        /// <summary>
+        /// Cantidad de personajes en una pagina default 50
+        /// </summary>
+        /// <returns>int cantidad de personajes</returns>
         public int getCantidadPersonajesPagina()
         {
             return json.RootElement.GetProperty("info").GetProperty("count").GetInt32();

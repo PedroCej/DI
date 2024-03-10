@@ -8,7 +8,10 @@ public partial class SeleccionarPerfil : ContentPage
     BBDD miBBDD;
     List<string> listaUsuarios;
     public int numUsuarios {  get; set; }
-	public SeleccionarPerfil()
+	/// <summary>
+    /// Pagina de seleccion perfil
+    /// </summary>
+    public SeleccionarPerfil()
 	{
 		InitializeComponent();
         LlenarUsuarios();
@@ -16,6 +19,9 @@ public partial class SeleccionarPerfil : ContentPage
 	}
 
     //Rellenar la pagina con los usuarios que ya se hayan creado
+    /// <summary>
+    /// Consultar los usuarios de la base de datos y crear boton para cada uno
+    /// </summary>
     private void LlenarUsuarios()
     {
         miBBDD = new BBDD();
@@ -29,6 +35,11 @@ public partial class SeleccionarPerfil : ContentPage
         numUsuarios = listaUsuarios.Count();
     }
 
+    /// <summary>
+    /// Sabiendo el user y la foto creamos la parte visual de cada usuario
+    /// </summary>
+    /// <param name="usuario">Nombre de usuario</param>
+    /// <param name="foto">Foto</param>
     public void agregarPerfil(string usuario, string foto)
     {
         // Creamos el boton
@@ -55,6 +66,11 @@ public partial class SeleccionarPerfil : ContentPage
         hlayoutPerfiles.Children.Insert(hlayoutPerfiles.Count - 1, nuevoVerticalStackLayout);
     }
 
+    /// <summary>
+    /// Inicia la aplicacion en modo invitado
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnUsuarioInvitado_Pressed(object sender, EventArgs e)
     { 
         Application.Current.MainPage = new AppShell_Inicio();
@@ -120,4 +136,5 @@ public partial class SeleccionarPerfil : ContentPage
             DisplayAlert("Contraseña incorrecta", "", "Volver");
         }
     }
+
 }

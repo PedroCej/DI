@@ -7,7 +7,7 @@
 
     
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" RadioButtonGroup.GroupName="Temas" Spacing="10">
-        <Label SemanticProperties.Description="{DynamicResource CambiarTema}" Text="Cambiar tema" Style="{DynamicResource lblTitulo}"/>
+        <Label SemanticProperties.Description="{DynamicResource CambiarTema}" Text="{DynamicResource CambiarTema}" Style="{DynamicResource lblTitulo}"/>
         <RadioButton Value="0" IsChecked="True" Content="{DynamicResource TemaOriginal}" GroupName="Temas" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>
         <RadioButton Value="1" Content="{DynamicResource TemaClaro}" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>
         <RadioButton Value="2" Content="{DynamicResource TemaOscuro}" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>

@@ -6,6 +6,9 @@ public partial class Favoritos : ContentPage
 {
     BBDD db = new BBDD();
     private string user = Application.Current.Resources["user"].ToString();
+    /// <summary>
+    /// Pagina favoritos
+    /// </summary>
     public Favoritos()
 	{
 		InitializeComponent();
@@ -13,6 +16,9 @@ public partial class Favoritos : ContentPage
         SemanticScreenReader.Default.Announce("Estas en favoritos");
     }
 
+    /// <summary>
+    /// Llenar el grid con los personajes de la base de datos
+    /// </summary>
     private async void llenarGrid()
     {
         gridObjetos.Children.Clear();
@@ -64,6 +70,11 @@ public partial class Favoritos : ContentPage
         }//for1
     } // llenar grid
 
+    /// <summary>
+    /// Pulsar un personaje
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private void btnPersonaje_Clicked(object? sender, EventArgs e)
     {
         ImageButton botonPresionado = sender as ImageButton;
