@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal0.Vistas.AcercaDe"
+             BackgroundImageSource="{DynamicResource imagenFondo}"
+             >
+    
+    <VerticalStackLayout Margin="20">
+        <Label Text="{DynamicResource ContenidoAcercade}"/>
+
+    </VerticalStackLayout>
+</ContentPage>

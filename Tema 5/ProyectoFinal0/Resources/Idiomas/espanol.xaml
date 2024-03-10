@@ -3,4 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal0.Resources.Idiomas.espanol">
 
+
+
+
+    <x:String x:Key="EditarPerfiles">Editar perfiles</x:String>
+    <x:String x:Key="Seleccionaunperfil">Elige un perfil</x:String>
+    <x:String x:Key="Invitado">Invitado</x:String>
+    <x:String x:Key="AnadirPerfil">Anadir Perfil</x:String>
+    <x:String x:Key="Inicio">Inicio</x:String>
+    <x:String x:Key="Buscador">Buscador</x:String>
+    <x:String x:Key="Favoritos">Favoritos</x:String>
+    <x:String x:Key="Ajustes">Ajustes</x:String>
+    <x:String x:Key="AcercaDe">Acerca De</x:String>
+    <x:String x:Key="Admin">Admin</x:String>
+    <x:String x:Key="Salir">Salir</x:String>
+    <x:String x:Key="Anterior">Anterior</x:String>
+    <x:String x:Key="Siguiente">Siguiente</x:String>
+    <x:String x:Key="BuscaAqui">Busca aquí...</x:String>
+    <x:String x:Key="CambiarTema">Cambiar tema</x:String>
+    <x:String x:Key="TemaOriginal">Tema Original</x:String>
+    <x:String x:Key="TemaClaro">Tema Claro</x:String>
+    <x:String x:Key="TemaOscuro">Tema Oscuro</x:String>
+    <x:String x:Key="CambiarIdioma">Cambiar idioma --></x:String>
+    <x:String x:Key="TituloPrueba">Titulo</x:String>
+    <x:String x:Key="Prueba">Así seran los textos del resto de la aplicación</x:String>
+    <x:String x:Key="SubtituloPrueba">Subtitulo</x:String>
+    <x:String x:Key="SeguroSalir">¿Estás seguro de que quieres salir?</x:String>
+    <x:String x:Key="Si">Si</x:String>
+    <x:String x:Key="No">No</x:String>
+
+
+
+
+
+    <x:String x:Key="ContenidoAcercade">Sobre Nosotros
+Acerca de nosotros
+Este sitio pertenece y es operado por The Walt Disney Company Limited, inscrita en Inglaterra y Gales, con domicilio social en 3 Queen Caroline Street, Hammersmith, Londres W6 9PE.
+
+Número de registro de la compañía: 530051
+Número IVA: 539293808
+Ayuda: support.disney.com/hc/es-es
+Contacto: help@disney.co.uk
+
+Los datos personales aquí recopilados serán administrados y controlados por The Walt Disney Company Limited. Para obtener más información, lea la Política de privacidad y la Política de uso de cookies.
+
+Sobre Servicios de Comunicación Audiovisual
+En virtud de lo previsto en el artículo 42 de la Ley 13/2022, de 7 de julio, General de Comunicación Audiovisual, se facilita la información del prestador de servicios de comunicación audiovisual que, de acuerdo a la información en el Registro Estatal de Prestadores de Servicios de Comunicación Audiovisual, sean responsabilidad de esta entidad:
+
+Prestador del servicio de comunicación audiovisual televisiva: The Walt Disney Company Iberia, S.L.U. Entidad con ánimo de lucro
+Datos de contacto: c/ José Bardasano Baos, nº9. Madrid. 28016.
+Dirección de correo electrónico: CORP.Contacto@disney.com
+Teléfono: 919153601
+
+Información Registral: Registro Mercantil de Madrid Tomo 15715, Folio 89, Sección 8ª, Hoja nº 264876, inscripción 1ª. N.I.F. número B-82764416
+
+Órgano regulador o supervisor competente: Comisión Nacional de los Mercados y la Competencia.
+
+Descubre más sobre La Familia de Empresas de Walt Disney</x:String>
+
+
+
 </ResourceDictionary>

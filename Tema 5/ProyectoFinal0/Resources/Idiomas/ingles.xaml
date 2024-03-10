@@ -3,4 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal0.Resources.Idiomas.ingles">
 
+    <x:String x:Key="EditarPerfiles">Edit profiles</x:String>
+    <x:String x:Key="Seleccionaunperfil">Select your profile</x:String>
+    <x:String x:Key="Invitado">Guest</x:String>
+    <x:String x:Key="AnadirPerfil">Add profile</x:String>
+    <x:String x:Key="Inicio">Main Page</x:String>
+    <x:String x:Key="Buscador">Search</x:String>
+    <x:String x:Key="Favoritos">Favorites</x:String>
+    <x:String x:Key="Ajustes">Settings</x:String>
+    <x:String x:Key="AcercaDe">Abous us</x:String>
+    <x:String x:Key="Admin">Admin</x:String>
+    <x:String x:Key="Salir">Exit</x:String>
+    <x:String x:Key="Anterior">Previous</x:String>
+    <x:String x:Key="Siguiente">Next</x:String>
+    <x:String x:Key="BuscaAqui">Mickey Mou...</x:String>
+    <x:String x:Key="CambiarTema">Choose theme</x:String>
+    <x:String x:Key="TemaOriginal">Original Theme</x:String>
+    <x:String x:Key="TemaClaro">Light Theme</x:String>
+    <x:String x:Key="TemaOscuro">Dark Theme</x:String>
+    <x:String x:Key="CambiarIdioma">Change language --></x:String>
+    <x:String x:Key="TituloPrueba">Title</x:String>
+    <x:String x:Key="Prueba">This will be the texts of the rest of the application</x:String>
+    <x:String x:Key="SubtituloPrueba">Subtitle</x:String>
+    <x:String x:Key="SeguroSalir">Are you sure you want to exit?</x:String>
+    <x:String x:Key="Si">Yes</x:String>
+    <x:String x:Key="No">No</x:String>
+
+
+
+
+
+    <x:String x:Key="ContenidoAcercade">About us
+About us
+This site is owned and operated by The Walt Disney Company Limited, registered in England and Wales, with registered office at 3 Queen Caroline Street, Hammersmith, London W6 9PE.
+
+Company registration number: 530051
+VAT number: 539293808
+Help: support.disney.com/hc/es-es
+Contact: help@disney.co.uk
+
+The personal data collected here will be managed and controlled by The Walt Disney Company Limited. For more information, please read the Privacy Policy and Cookie Policy.
+
+About Audiovisual Communication Services
+Pursuant to the provisions of article 42 of Law 13/2022, of July 7, General Audiovisual Communication, information is provided on the provider of audiovisual communication services that, according to the information in the State Registry of Providers of Audiovisual Communication Services, are the responsibility of this entity:
+
+Television audiovisual communication service provider: The Walt Disney Company Iberia, S.L.U. For-profit entity
+Contact information: c/ José Bardasano Baos, nº9. Madrid. 28016.
+Email address: CORP.Contacto@disney.com
+Telephone: 919153601
+
+Registry Information: Commercial Registry of Madrid Volume 15715, Folio 89, Section 8, Sheet No. 264876, entry 1. N.I.F. number B-82764416
+
+Competent regulatory or supervisory body: National Markets and Competition Commission.
+
+Find out more about The Walt Disney Family of Companies</x:String>
+
 </ResourceDictionary>

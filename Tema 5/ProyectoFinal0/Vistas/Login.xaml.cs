@@ -13,12 +13,14 @@ public partial class Login : ContentPage
     {
         InitializeComponent();
         this.paginaSeleccionarPerfil = paginaSeleccionarPerfil;
+        SemanticScreenReader.Default.Announce("pagina login");
     }
 
 
     private void btnCancelar_Pressed(object sender, EventArgs e)
     {
-        Navigation.PopAsync();
+        Navigation.PopModalAsync();
+        SemanticScreenReader.Default.Announce("saliendo");
     }
 
     private void elegirFoto_Pressed(object sender, EventArgs e)
@@ -41,25 +43,32 @@ public partial class Login : ContentPage
 
     private void btnConfirmar_Pressed(object sender, EventArgs e)
     {
-        if (txtPass.Text == txtPass2.Text)
+        try
         {
-            if (miBBDD.RegisterTry(txtUser.Text) == false)
+             if (txtPass.Text == txtPass2.Text && txtUser.Text.ToString()!="")
             {
-                miBBDD.CrearUsuario(txtUser.Text, txtPass.Text, fotoElegida);
+                if (miBBDD.RegisterTry(txtUser.Text) == false )
+                {
+                    miBBDD.CrearUsuario(txtUser.Text, txtPass.Text, fotoElegida);
                 
                 
-                paginaSeleccionarPerfil.agregarPerfil(txtUser.Text, fotoElegida);
-                Navigation.PopAsync();
+                    paginaSeleccionarPerfil.agregarPerfil(txtUser.Text, fotoElegida);
+                    Navigation.PopAsync();
+                }
+                else
+                {
+                    DisplayAlert("Error", $"El nombre de usuario {txtUser.Text} ya está en uso", "Aceptar");
+                }
             }
             else
             {
-                DisplayAlert("Error", $"El nombre de usuario {txtUser.Text} ya está en uso", "Aceptar");
+                DisplayAlert("Error", "Las contraseñas deben coincidir", "Aceptar");
             }
-        }
-        else
+        }catch(Exception ex)
         {
-            DisplayAlert("Error", "Las contraseñas deben coincidir", "Aceptar");
+            DisplayAlert("Ha habiado un error", "No has puesto el nombre de usuario", "Ok");
         }
+        
         
         
     }

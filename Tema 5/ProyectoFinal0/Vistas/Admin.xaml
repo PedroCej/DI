@@ -4,10 +4,20 @@
              x:Class="ProyectoFinal0.Vistas.Admin"
              Title="Admin"
              BackgroundImageSource="{DynamicResource imagenFondo}">
-    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="Usuarios activos:" Style="{DynamicResource  lblTitulo2}"/>
-        <ListView x:Name="listView"/>
-        <Button Text="Eliminar" Clicked="Button_Clicked"/>
+    <VerticalStackLayout SemanticProperties.Description="usuarios" HorizontalOptions="Center" VerticalOptions="Center" >
+        <Label Text="Usuarios activos:" Style="{DynamicResource  lblTitulo2}" HorizontalOptions="Center"/>
+        <ListView x:Name="listView" HorizontalOptions="Center" WidthRequest="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="{Binding .}" HorizontalOptions="Center" FontSize="15"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Eliminar" Clicked="Button_Clicked" HorizontalOptions="Center"/>
 
 
     </VerticalStackLayout>

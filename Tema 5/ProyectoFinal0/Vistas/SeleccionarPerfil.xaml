@@ -3,44 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal0.Vistas.SeleccionarPerfil"
              BackgroundImageSource="fondo_textura.jpg">
-    <VerticalStackLayout HorizontalOptions="Center">
+    <VerticalStackLayout HorizontalOptions="Center" Margin="20,20,20,20">
 
-        <HorizontalStackLayout>
-            <Label 
-                Style="{DynamicResource lblStyle}"
-            Text="Inicio de sesion"
-            VerticalOptions="Start" 
-            HorizontalOptions="Start" 
-            Margin="10,10,0,0"/>
-
-
-            <Button
-            Text="Editar perfiles"
-            FontSize="Medium"
-            HeightRequest="100"
-            WidthRequest="175"
-            CornerRadius="20"
-            HorizontalOptions="End" 
-            Margin="1100,25,25,0" Clicked="Button_Clicked_1"/>
-
-        </HorizontalStackLayout>
+        <Button
+        Text="{DynamicResource EditarPerfiles}"
+        FontSize="Body"
+        HeightRequest="50"
+        WidthRequest="150"
+        CornerRadius="20" 
+        VerticalOptions="End"
+        Clicked="Button_Clicked_1" HorizontalOptions="End"/>
 
         <Label
-        Text="Selecciona un perfil"
+        Text="{DynamicResource Seleccionaunperfil}"
         FontSize="Large"
         HorizontalOptions="Center"
         Margin="0,0,0,70"/>
 
-        <HorizontalStackLayout HorizontalOptions="Center" x:Name="hlayoutPerfiles">
+        <HorizontalStackLayout HorizontalOptions="Center" x:Name="hlayoutPerfiles" VerticalOptions="CenterAndExpand">
 
-            <VerticalStackLayout Margin="20,0,0,0">
-                <ImageButton x:Name="btnUsuarioInvitado" Source="invitado.png" Aspect="AspectFill"  HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="btnUsuarioInvitado_Pressed"/>
-                <Label Text="Invitado" HorizontalOptions="Center" Margin="0,10,0,0" Opacity="0.9"/> 
+            <VerticalStackLayout>
+                <ImageButton SemanticProperties.Description="Usuario invitado" x:Name="btnUsuarioInvitado" Source="invitado.png" Aspect="AspectFill"  HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="btnUsuarioInvitado_Pressed"/>
+                <Label Text="{DynamicResource Invitado}" HorizontalOptions="Center" Margin="0,10,0,0" Opacity="0.9"/> 
             </VerticalStackLayout>
 
             <VerticalStackLayout Margin="20,0,0,0">
-                <ImageButton Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed_1"/>
-                <Label Text="Añadir perfil" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                <ImageButton SemanticProperties.Description="Crear usuario" Source="anadir_perfil.png"  Opacity="0.3" HeightRequest="150" WidthRequest="150" CornerRadius="75" Pressed="ImageButton_Pressed_1"/>
+                <Label Text="{DynamicResource AnadirPerfil}" HorizontalOptions="Center" Margin="0,10,0,0"/>
             </VerticalStackLayout>
 
     </HorizontalStackLayout>

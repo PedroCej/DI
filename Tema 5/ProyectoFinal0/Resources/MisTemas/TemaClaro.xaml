@@ -4,5 +4,54 @@
              x:Class="ProyectoFinal0.Resources.MisTemas.TemaClaro">
 
     <x:String x:Key="imagenFondo">fondo_claro.jpg</x:String>
-    
+    <Color x:Key="ColorFondoPrimario">#02C9FF</Color>
+    <x:Double x:Key="tamanoLetra">15</x:Double>
+    <x:Double x:Key="tamanoLetraTitulo">50</x:Double>
+    <x:Double x:Key="tamanoLetraTitulo2">25</x:Double>
+
+
+    <!-- LABELS -->
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="#242BF0"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap"/>
+        <Setter Property="FontSize" Value="{DynamicResource tamanoLetra}"/>
+    </Style>
+    <Style TargetType="Label" x:Key="lblTitulo">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="#242BF0"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap" />
+        <Setter Property="FontSize" Value="{DynamicResource tamanoLetraTitulo}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+        <Setter Property="TextDecorations" Value="Underline" />
+    </Style>
+    <Style TargetType="Label" x:Key="lblTitulo2">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="#242BF0"></Setter>
+        <Setter Property="LineBreakMode" Value="CharacterWrap" />
+        <Setter Property="FontSize" Value="{DynamicResource tamanoLetraTitulo2}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextTransform" Value="Uppercase" />
+    </Style>
+
+    <!-- BOTONES -->
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="#242BF0"></Setter>
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="BackgroundColor" Value="#30ACAF99"/>
+        <Setter Property="TextTransform" Value="Uppercase" />
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="FontFamily" Value="waltographUI.ttf"></Setter>
+        <Setter Property="TextColor" Value="#242BF0"></Setter>
+        <Setter Property="FontSize" Value="20" />
+
+    </Style>
+
+
+
+
 </ResourceDictionary>

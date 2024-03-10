@@ -7,11 +7,12 @@
     <ScrollView>
         <VerticalStackLayout
         VerticalOptions="Center"
-        HorizontalOptions="Center">
+        HorizontalOptions="Center"
+            Padding="0,50,0,50">
 
 
 
-        <Grid RowSpacing="5" ColumnSpacing="5" Margin="0,0,0,20" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+            <Grid SemanticProperties.Description="seleccionar foto de perfil" RowSpacing="5" ColumnSpacing="5" Margin="0,0,0,20" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
 
 
 
@@ -46,18 +47,18 @@
         </Grid>
 
 
-        <Entry x:Name="txtUser" Placeholder="Usuario" HeightRequest="50" WidthRequest="400" FontSize="25" Margin="0,20,0,0"/>
-        <Entry x:Name="txtPass" Placeholder="Contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,0"/>
-        <Entry x:Name="txtPass2" Placeholder="Repite contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,40"/>
+            <Entry SemanticProperties.Description="nombre de usuario" x:Name="txtUser" Placeholder="Usuario" HeightRequest="50" WidthRequest="400" FontSize="25" Margin="0,20,0,0"/>
+            <Entry SemanticProperties.Description="contraseña" x:Name="txtPass" Placeholder="Contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,0"/>
+            <Entry SemanticProperties.Description="repetir contraseña" x:Name="txtPass2" Placeholder="Repite contraseña" HeightRequest="50" WidthRequest="400" FontSize="25" IsPassword="True" Margin="0,20,0,40"/>
 
 
 
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Button Text="Confirmar" x:Name="btnConfirmar"
+        <HorizontalStackLayout Margin="0,0,0,50" HorizontalOptions="Center">
+                <Button SemanticProperties.Description="aceptar" Text="Confirmar" x:Name="btnConfirmar"
                     Pressed="btnConfirmar_Pressed"
                     Margin="0,0,20,0"
                     WidthRequest="200"/>
-            <Button Text="Cancelar" x:Name="btnCancelar"
+                <Button SemanticProperties.Description="cancelar" Text="Cancelar" x:Name="btnCancelar"
                     Pressed="btnCancelar_Pressed"
                     WidthRequest="200"/>
         </HorizontalStackLayout>

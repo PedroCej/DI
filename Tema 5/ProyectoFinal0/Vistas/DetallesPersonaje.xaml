@@ -4,36 +4,38 @@
              x:Class="ProyectoFinal0.Vistas.DetallesPersonaje"
              BackgroundImageSource="{DynamicResource imagenFondo}"
              >
-
-    <HorizontalStackLayout Margin="40,40,40,40" Spacing="30">
-        <Image x:Name="imagenPersonaje" Source="no_image.png" Aspect="AspectFit" />
-        
-
-        <ScrollView HorizontalOptions="FillAndExpand">
-            <VerticalStackLayout>
-                <Label x:Name="lblNombre" Text="NOMBRE" Style="{DynamicResource lblTitulo}"/>
-
-                <Label x:Name="lblPeliculas" Text="Peliculas:" Style="{DynamicResource lblTitulo2}"/>
-                <Label x:Name="descPeliculas" Text="" LineBreakMode="TailTruncation"/>
+    <HorizontalStackLayout Spacing="30" Margin="30">
+            <Image x:Name="imagenPersonaje" Source="no_image.png" Aspect="AspectFit"/>
 
 
-                <Label x:Name="lblCortos" Text="Cortos:" Style="{DynamicResource lblTitulo2}" />
-                <Label x:Name="descCortos" Text=""/>
+            <ScrollView VerticalOptions="Start" HorizontalOptions="Center">
+                <VerticalStackLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                <Label SemanticProperties.Description="Personaje" x:Name="lblNombre" Text="NOMBRE" Style="{DynamicResource lblTitulo}"/>
 
-                <Label x:Name="lblSeries" Text="Series:" Style="{DynamicResource lblTitulo2}" />
-                <Label x:Name="descSeries" Text=""/>
+                    <Label x:Name="lblPeliculas" Text="Peliculas:" Style="{DynamicResource lblTitulo2}"/>
+                    <Label x:Name="descPeliculas" Text="" LineBreakMode="TailTruncation"/>
 
-                <Label x:Name="lblJuegos" Text="Juegos:" Style="{DynamicResource lblTitulo2}" />
-                <Label x:Name="descJuegos" Text=""/>
 
-                <Label x:Name="lblAmigos" Text="Amigos:" Style="{DynamicResource lblTitulo2}" />
-                <Label x:Name="descAmigos" Text=""/>
+                    <Label x:Name="lblCortos" Text="Cortos:" Style="{DynamicResource lblTitulo2}" />
+                    <Label x:Name="descCortos" Text=""/>
 
-                <Label x:Name="lblEnemigos" Text="Enemigos:" Style="{DynamicResource lblTitulo2}" />
-                <Label x:Name="descEnemigos" Text=""/>
-            </VerticalStackLayout>
-        </ScrollView>
-    </HorizontalStackLayout>
+                    <Label x:Name="lblSeries" Text="Series:" Style="{DynamicResource lblTitulo2}" />
+                    <Label x:Name="descSeries" Text=""/>
 
-    
+                    <Label x:Name="lblJuegos" Text="Juegos:" Style="{DynamicResource lblTitulo2}" />
+                    <Label x:Name="descJuegos" Text=""/>
+
+                    <Label x:Name="lblAmigos" Text="Amigos:" Style="{DynamicResource lblTitulo2}" />
+                    <Label x:Name="descAmigos" Text=""/>
+
+                    <Label x:Name="lblEnemigos" Text="Enemigos:" Style="{DynamicResource lblTitulo2}" />
+                    <Label x:Name="descEnemigos" Text=""/>
+                    
+                    <ImageButton x:Name="btnFav" Clicked="btnFav_Clicked" Opacity="0.4" Source="favorito.png" HeightRequest="100" WidthRequest="100" VerticalOptions="End" HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </ScrollView>
+        </HorizontalStackLayout>
+
+
+
 </ContentPage>

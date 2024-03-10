@@ -5,7 +5,7 @@ namespace ProyectoFinal0.Vistas;
 public partial class Inicio : ContentPage
 {
 	DisneyAPI api;
-	private int pagina = 148;
+	private int pagina = 1;
 
 	public Inicio()
 	{
@@ -14,11 +14,12 @@ public partial class Inicio : ContentPage
         try
         {
             llenarGrid(pagina);
-        }catch(Exception ex)
-        {
-            DisplayAlert("", "", "");
+            SemanticScreenReader.Default.Announce("Inicio, bienvenido");
         }
-		
+        catch(Exception ex)
+        {
+            DisplayAlert("Error", "Algo podria esta fallando", "Ok");
+        }		
 	}
 
     private async void btnSiguiente_Clicked(object sender, EventArgs e)
@@ -28,9 +29,11 @@ public partial class Inicio : ContentPage
             pagina++;
 		    llenarGrid(pagina);
             await miScroll.ScrollToAsync(-400, 20, true);
+            SemanticScreenReader.Default.Announce("Pagina siguiente");
         }
         else
         {
+            SemanticScreenReader.Default.Announce("No hay mas paginas, volver al inicio?");
             bool answer = await DisplayAlert("No hay mas paginas", "¿Quieres volver al inicio del buscador?", "Si, volver", "No");
             if(answer)
             {
@@ -45,12 +48,14 @@ public partial class Inicio : ContentPage
     {
         if (pagina > 1)
         {
+            SemanticScreenReader.Default.Announce("moviendo patras");
             pagina--;
             llenarGrid(pagina);
             await miScroll.ScrollToAsync(-400, 20, true);
         }
         else
         {
+            SemanticScreenReader.Default.Announce("No hay mas paginas, ir al final?");
             bool answer = await DisplayAlert("No hay paginas anteriores", "¿Quieres ir al final del buscador?", "Si", "No");
             if (answer)
             {

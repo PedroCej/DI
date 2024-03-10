@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal0.Vistas.Favoritos"
+             BackgroundImageSource="{DynamicResource imagenFondo}">
+    <ScrollView x:Name="miScroll" >
+        <VerticalStackLayout SemanticProperties.Description="tus personajes" >
+            <Grid Padding="30,30,30,30" x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" RowSpacing="40"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -6,17 +6,17 @@
              >
 
     
-    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" RadioButtonGroup.GroupName="Temas" Spacing="10">
-        <Label Text="Cambiar tema" Style="{DynamicResource lblTitulo}"/>
-        <RadioButton Value="0" IsChecked="True" Content="Tema Original" GroupName="Temas" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
-        <RadioButton Value="1" Content="Tema Claro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
-        <RadioButton Value="2" Content="Tema Oscuro" CheckedChanged="RadioButton_CheckedChanged"></RadioButton>
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" RadioButtonGroup.GroupName="Temas" Spacing="10">
+        <Label SemanticProperties.Description="{DynamicResource CambiarTema}" Text="Cambiar tema" Style="{DynamicResource lblTitulo}"/>
+        <RadioButton Value="0" IsChecked="True" Content="{DynamicResource TemaOriginal}" GroupName="Temas" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>
+        <RadioButton Value="1" Content="{DynamicResource TemaClaro}" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>
+        <RadioButton Value="2" Content="{DynamicResource TemaOscuro}" CheckedChanged="RadioButton_CheckedChanged" FontSize="{DynamicResource tamanoLetra}"></RadioButton>
 
 
         <HorizontalStackLayout Margin="0,40,0,40" HorizontalOptions="Start" Spacing="10">
 
-            <Label Text="Cambiar idioma -->" VerticalOptions="CenterAndExpand" Style="{DynamicResource lblTitulo2}"/>
-            <Picker SelectedIndexChanged="Picker_SelectedIndexChanged" SelectedIndex="0" WidthRequest="40" HeightRequest="40">
+            <Label SemanticProperties.Description="cambiar idioma" Text="{DynamicResource CambiarIdioma}" VerticalOptions="CenterAndExpand" Style="{DynamicResource lblTitulo2}"/>
+            <Picker SelectedIndexChanged="Picker_SelectedIndexChanged" SelectedIndex="0" WidthRequest="40" HeightRequest="40" BackgroundColor="{DynamicResource ColorFondoPrimario}">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Español</x:String>
@@ -25,13 +25,14 @@
                 </Picker.ItemsSource>
             </Picker>
         </HorizontalStackLayout>
+
+
+        <Slider SemanticProperties.Description="tamañño letra" x:Name="miSlider" ValueChanged="Slider_ValueChanged"
+                Minimum="1" Maximum="1.5" Value="1"/>
         
-        
-        <Slider x:Name="miSlider" ValueChanged="Slider_ValueChanged"/>
-        
-        <Label Text="Titulo" Style="{DynamicResource lblTitulo}"/>
-        <Label Text="Subtitulo" Style="{DynamicResource lblTitulo2}"/>
-        <Label Text="Así seran los textos del resto de la aplicación" />
+        <Label Text="{DynamicResource TituloPrueba}" Style="{DynamicResource lblTitulo}"/>
+        <Label Text="{DynamicResource SubtituloPrueba}" Style="{DynamicResource lblTitulo2}"/>
+        <Label Text="{DynamicResource Prueba}" />
         
     </VerticalStackLayout>
 

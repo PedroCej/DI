@@ -8,25 +8,25 @@
     xmlns:sys="clr-namespace:System;assembly=netstandard"
     Shell.FlyoutBehavior="Flyout"
     Title="Disney Tracker"
-    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutBackgroundColor="{DynamicResource ColorFondoPrimario}"
     FlyoutHeaderBehavior="CollapseOnScroll"
     FlyoutWidth="200">
 
 
-    <FlyoutItem Title="Inicio" Shell.BackgroundColor="{DynamicResource ColorFondoPrimario}">
-        <ShellContent Title="Inicio" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
-        <ShellContent Title="Favoritos" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+    <FlyoutItem Title="{DynamicResource Inicio}" Shell.BackgroundColor="{DynamicResource ColorFondoPrimario}">
+        <ShellContent Title="{DynamicResource Buscador}" ContentTemplate="{DataTemplate misPaginas:Inicio}"></ShellContent>
+        <ShellContent x:Name="favoritos" Title="{DynamicResource Favoritos}" ContentTemplate="{DataTemplate misPaginas:Favoritos}"></ShellContent>
     </FlyoutItem>
-    <FlyoutItem Title="Ajustes">
+    <FlyoutItem Title="{DynamicResource Ajustes}">
         <ShellContent ContentTemplate="{DataTemplate misPaginas:Ajustes}"></ShellContent>
     </FlyoutItem>
-    <FlyoutItem Title="Acerca De">
-        <ShellContent ContentTemplate="{DataTemplate misPaginas:Ajustes}"></ShellContent>
+    <FlyoutItem Title="{DynamicResource AcercaDe}">
+        <ShellContent ContentTemplate="{DataTemplate misPaginas:AcercaDe}"></ShellContent>
     </FlyoutItem>
-    <FlyoutItem x:Name="itemAdmin" Title="Admin">
+    <FlyoutItem x:Name="itemAdmin" Title="{DynamicResource Admin}">
         <ShellContent ContentTemplate="{DataTemplate misPaginas:Admin}"></ShellContent>
     </FlyoutItem>
-    <FlyoutItem Title="Salir">
+    <FlyoutItem Title="{DynamicResource Salir}">
         <ShellContent ContentTemplate="{DataTemplate misPaginas:Salir}"></ShellContent>
     </FlyoutItem>
 

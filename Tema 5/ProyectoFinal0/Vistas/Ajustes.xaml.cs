@@ -26,12 +26,12 @@ public partial class Ajustes : ContentPage
             if (miRadioButton.Value.ToString() == "1")
             {
                 miListaDiccionarios.Add(new TemaClaro());
-                SemanticScreenReader.Default.Announce("tema original");
+                SemanticScreenReader.Default.Announce("tema claro");
             }
             if (miRadioButton.Value.ToString() == "2")
             {
                 miListaDiccionarios.Add(new TemaOscuro());
-                SemanticScreenReader.Default.Announce("tema original");
+                SemanticScreenReader.Default.Announce("tema oscuro");
             }
         }
     }
@@ -41,16 +41,18 @@ public partial class Ajustes : ContentPage
         Picker miPicker = sender as Picker;
         ICollection<ResourceDictionary> miListaDiccionarios;
         miListaDiccionarios = Application.Current.Resources.MergedDictionaries;
-        miListaDiccionarios.Clear();
+        
         if (miPicker.SelectedIndex == 0)
         {
             miListaDiccionarios.Add(new espanol());
+            SemanticScreenReader.Default.Announce("español");
         }
         if (miPicker.SelectedIndex == 1)
         {
             miListaDiccionarios.Add(new ingles());
+            SemanticScreenReader.Default.Announce("ingles");
         }
-        miListaDiccionarios.Add(new TemaDefault());
+       
 
 
 
@@ -58,7 +60,11 @@ public partial class Ajustes : ContentPage
 
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-       // double tam = e.NewValue;
-        //Tema1.cambiarTamano(tam);
+        Slider slider = sender as Slider;
+        App.Current.Resources["tamanoLetra"] = 15 * slider.Value;
+        App.Current.Resources["tamanoLetraTitulo"] = 50 * slider.Value;
+        App.Current.Resources["tamanoLetraTitulo2"] = 25 * slider.Value;
+        SemanticScreenReader.Default.Announce("cambiando tamaño");
+
     }
 }

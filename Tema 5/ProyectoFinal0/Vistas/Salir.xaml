@@ -7,10 +7,10 @@
 
     
     <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
-        <Label Text="¿Estás seguro de que quieres salir?" Style="{DynamicResource lblTitulo}"/>
+        <Label Text="{DynamicResource SeguroSalir}" Style="{DynamicResource lblTitulo}"/>
 
-            <Button x:Name="btnAceptar" Text="Sí" Clicked="btnAceptar_Clicked" HeightRequest="40"/>
-        <Button x:Name="btnCancel" Text="No" Clicked="btnCancel_Clicked" HeightRequest="40"/>
+            <Button x:Name="btnAceptar" Text="{DynamicResource Si}" Clicked="btnAceptar_Clicked" HeightRequest="40"/>
+        <Button x:Name="btnCancel" Text="{DynamicResource No}" Clicked="btnCancel_Clicked" HeightRequest="40"/>
            
     </VerticalStackLayout>
     

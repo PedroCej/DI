@@ -111,6 +111,95 @@ namespace ProyectoFinal0.Datos
             return cant;
         }
 
+
+        //
+        // METODOS PARA FAVORITOS
+        //
+        public void guardarPersonaje(int id, string user, string nombre, string imagen)
+        {
+            
+            comando = new SQLiteCommand($"INSERT INTO Personajes ('id','Usuario','Nombre','Imagen')" +
+                $" VALUES ('{id}','{user}','{nombre}','{imagen}');", conexion);
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+        }
+
+        public List<string> getPersonajesGuardados(string user)
+        {
+            comando = new SQLiteCommand($"SELECT * FROM Personajes WHERE Usuario='{user}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Personajes");
+            List<string> lista = new List<string>();
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Personajes"].Rows)
+                {
+                    lista.Add(row[1].ToString());
+                }
+            }
+            return lista;
+        }
+        public string getIdGuardado(string nombre)
+        {
+            comando = new SQLiteCommand($"SELECT id FROM Personajes WHERE Nombre='{nombre}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Personajes");
+            string id="";
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Personajes"].Rows)
+                {
+                    id = row[0].ToString();
+                }
+            }
+            return id;
+        }
+
+        public List<string> getFotosGuardadas(string user)
+        {
+            comando = new SQLiteCommand($"SELECT Imagen FROM Personajes WHERE Usuario='{user}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Personajes");
+            List<string> lista = new List<string>();
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Personajes"].Rows)
+                {
+                    lista.Add(row[0].ToString());
+                }
+            }
+            return lista;
+        }
+
+        public int getNumeroPersonajesGuardados(string user)
+        {
+            int cant = 0;
+            comando = new SQLiteCommand($"SELECT * FROM Personajes WHERE Usuario='{user}'", conexion);
+            adaptador = new SQLiteDataAdapter(comando);
+            ds = new DataSet();
+            adaptador.Fill(ds, "Personajes");
+
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                foreach (DataRow row in ds.Tables["Personajes"].Rows)
+                {
+                    cant++;
+                }
+            }
+            return cant;
+        }
+
+        
+
         //
         //  METODOS DEL ADMIN
         //

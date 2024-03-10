@@ -93,7 +93,7 @@ public partial class SeleccionarPerfil : ContentPage
     {
         if(miBBDD.getNumUsers()<6)
         {
-            Navigation.PushAsync(new Login(this));
+            Navigation.PushModalAsync(new Login(this));
         }
         else
         {

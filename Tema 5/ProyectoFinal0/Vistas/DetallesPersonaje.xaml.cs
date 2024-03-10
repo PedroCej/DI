@@ -1,3 +1,4 @@
+using ProyectoFinal0.Datos;
 using ProyectoFinal0.Servicios;
 
 namespace ProyectoFinal0.Vistas;
@@ -6,6 +7,7 @@ public partial class DetallesPersonaje : ContentPage
 {
 	int id;
 	DisneyAPI disneyAPI;
+    BBDD db = new BBDD();
 	public DetallesPersonaje(DisneyAPI api,int id)
 	{
 		InitializeComponent();
@@ -13,6 +15,11 @@ public partial class DetallesPersonaje : ContentPage
 		disneyAPI = api;
 		
 		llenarPagina();
+        if (AppShell_Inicio.tipoUser == 1)
+        {
+            btnFav.IsVisible = false;
+        }
+        SemanticScreenReader.Default.Announce("Estas viendo detalles de " + disneyAPI.getNombre());
     }
 
 	private async void llenarPagina()
@@ -20,6 +27,7 @@ public partial class DetallesPersonaje : ContentPage
         await disneyAPI.llenarJsonUnPersonaje(id);
         try
         {
+            
             llenarPeliculas();
             llenarCortos();
             llenarSeries();
@@ -28,9 +36,14 @@ public partial class DetallesPersonaje : ContentPage
             llenarEnemigos();
             lblNombre.Text = disneyAPI.getNombre();
             imagenPersonaje.Source = disneyAPI.getImagen();
-        }catch(Exception e)
+
+
+
+        }
+        catch(Exception e)
         {
             DisplayAlert("Algo salio mal","Algunas funciones podrían fallar","Ok");
+            SemanticScreenReader.Default.Announce("error en esta pagina");
         }
         
     }
@@ -96,5 +109,13 @@ public partial class DetallesPersonaje : ContentPage
             lblEnemigos.Text = "";
     }
 
-
+    private void btnFav_Clicked(object sender, EventArgs e)
+    {
+        string user = Application.Current.Resources["user"].ToString();
+        string nombre = lblNombre.Text.ToString();
+        DisplayAlert("Personaje guardado",$"El usuario {user} ha guardado a {nombre}","Aceptar");
+        db.guardarPersonaje(id, user, nombre, disneyAPI.getImagen());
+        btnFav.Opacity = 1;
+        SemanticScreenReader.Default.Announce("Añadido a favoritos");
+    }
 }

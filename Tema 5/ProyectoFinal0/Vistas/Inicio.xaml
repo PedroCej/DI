@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal0.Vistas.Inicio"
-             Title=""
              BackgroundImageSource="{DynamicResource imagenFondo}"
+             Title="{DynamicResource Buscador}"
              >
     <ScrollView x:Name="miScroll" >
         <VerticalStackLayout >
-            <SearchBar Margin="150,25,150,25" Placeholder="Busca aquí..." HorizontalOptions="FillAndExpand" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
-            <Grid Padding="150,0,150,0" x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" RowSpacing="40"/>
+            <SearchBar SemanticProperties.Description="Barra de busqueda" Margin="150,25,150,25" Placeholder="{DynamicResource BuscaAqui}" HorizontalOptions="FillAndExpand" SearchButtonPressed="SearchBar_SearchButtonPressed" BackgroundColor="{DynamicResource ColorFondoPrimario}"/>
+            <Grid SemanticProperties.Description="Personajes" Padding="150,0,150,0" x:Name="gridObjetos" ColumnSpacing="20" HorizontalOptions="Center" ColumnDefinitions="*,*,*,*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*" RowSpacing="40"/>
 
-            <StackLayout HorizontalOptions="FillAndExpand" Padding="0,20,0,20" BackgroundColor="#44A6ACAF">
+            <StackLayout SemanticProperties.Description="cambiar de pagina" HorizontalOptions="FillAndExpand" Padding="0,20,0,20" BackgroundColor="#44A6ACAF">
                 <HorizontalStackLayout   HorizontalOptions="Center">
-                    <Button x:Name="btnAnterior" Text="Anterior"  Clicked="btnAnterior_Clicked"  CornerRadius="10" />
+                    <Button SemanticProperties.Description="anterior" x:Name="btnAnterior" Text="{DynamicResource Anterior}"  Clicked="btnAnterior_Clicked"  CornerRadius="10" />
                     <Label x:Name="lblPagina"  VerticalTextAlignment="Center" Padding="10,0,10,0" HorizontalTextAlignment="Start"/>
-                    <Button x:Name="btnSiguiente"  Text="Siguiente" Clicked="btnSiguiente_Clicked"  CornerRadius="10" Margin="0,0,4,0"/>
+                    <Button SemanticProperties.Description="siguiente" x:Name="btnSiguiente"  Text="{DynamicResource Siguiente}" Clicked="btnSiguiente_Clicked"  CornerRadius="10" Margin="0,0,4,0"/>
                 </HorizontalStackLayout>
             </StackLayout>
         </VerticalStackLayout>
