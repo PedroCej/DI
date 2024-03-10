@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace ProyectoFinal0.Datos
         {
             Conectar();
         }
+
+ 
         public void Conectar()
         {
             conexion = new SQLiteConnection("Data Source = C:\\Users\\perki\\Desktop\\DI\\Tema 5\\ProyectoFinal0\\Datos\\miDB.db; Version = 3; New = False; Compress = True; ");
@@ -28,9 +31,11 @@ namespace ProyectoFinal0.Datos
         }// fin conectar
 
 
-        public void CrearUsuario(String usuario, String contraseña, String foto)
+        public void CrearUsuario(String usuario, String contrasena, String foto)
         {
-            comando = new SQLiteCommand($"INSERT INTO Logins ('Usuario','Pass','FotoPerfil') VALUES ('{usuario}','{contraseña}','{foto}');", conexion);
+            comando = new SQLiteCommand($"INSERT INTO Logins ('Usuario','Pass','FotoPerfil') VALUES (@usuario,@contrasena,'{foto}');", conexion);
+            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@contrasena", contrasena);
             try
             {
                 comando.ExecuteNonQuery();
@@ -241,9 +246,11 @@ namespace ProyectoFinal0.Datos
             return false;
         }
 
-        public bool LoginTry(String usuario, String contraseña)
+        public bool LoginTry(String usuario, String contrasena)
         {
-            comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario='{usuario}' AND Pass='{contraseña}'", conexion);
+            comando = new SQLiteCommand($"SELECT * FROM Logins WHERE Usuario=@usuario AND Pass=@contrasena", conexion);
+            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@contrasena", contrasena);
             adaptador = new SQLiteDataAdapter(comando);
             ds = new DataSet();
             try
